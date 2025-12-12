@@ -1,0 +1,415 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/tokenisation/SectionHeading";
+import { FeatureCard } from "@/components/tokenisation/FeatureCard";
+import { ProcessStep } from "@/components/tokenisation/ProcessStep";
+import { FAQAccordion } from "@/components/tokenisation/FAQAccordion";
+import { CTABand } from "@/components/tokenisation/CTABand";
+import { Navbar } from "@/components/tokenisation/Navbar";
+import { Footer } from "@/components/tokenisation/Footer";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Download,
+  Building2,
+  TrendingUp,
+  Droplets,
+  Eye,
+  Users,
+  ShieldCheck,
+  Diamond,
+  Vault,
+  FileCheck,
+  Coins,
+  BarChart3,
+  Gem,
+  Package,
+  PieChart,
+} from "lucide-react";
+
+const TokenisationHome = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.08),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--primary)/0.05),_transparent_50%)]" />
+        
+        {/* Subtle grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+                              linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
+        />
+
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left side - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                Billiton Digital
+              </span>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
+                Institutional-grade{" "}
+                <span className="text-gradient-gold">diamond tokenisation.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
+                Billiton combines auction-driven price discovery with a regulated digital asset platform, 
+                unlocking liquidity for diamond holders and new opportunities for professional investors.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button variant="hero">
+                  Book a consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button variant="hero-outline">
+                  <Download className="mr-2 w-5 h-5" />
+                  Download overview
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Right side - Pipeline graphic */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-12">
+                <div className="flex items-center justify-between gap-4">
+                  {/* Diamonds */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-secondary/50 flex items-center justify-center mb-3">
+                      <Gem className="w-10 h-10 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">Diamonds</span>
+                    <span className="text-xs text-muted-foreground">Certified stones</span>
+                  </div>
+
+                  {/* Arrow */}
+                  <ArrowRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+
+                  {/* Vault */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-secondary/50 flex items-center justify-center mb-3">
+                      <Vault className="w-10 h-10 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">Vault</span>
+                    <span className="text-xs text-muted-foreground">Secure custody</span>
+                  </div>
+
+                  {/* Arrow */}
+                  <ArrowRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+
+                  {/* Tokens */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-3 ring-2 ring-primary/30">
+                      <Coins className="w-10 h-10 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">Tokens</span>
+                    <span className="text-xs text-muted-foreground">Digital access</span>
+                  </div>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who This Is For */}
+      <section className="py-24 md:py-32">
+        <div className="container">
+          <SectionHeading
+            title="Built for serious diamond holders and professional investors."
+          />
+
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {/* Asset Owners Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="group relative p-8 md:p-10 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Building2 className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl font-medium text-foreground mb-3">
+                Asset Owners
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Mining companies, vault providers, and collectors seeking to unlock 
+                liquidity from diamond holdings without full divestment.
+              </p>
+              <Link to="/tokenisation/asset-owners">
+                <Button variant="gold-outline">
+                  Learn more
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </motion.div>
+
+            {/* Investors Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative p-8 md:p-10 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl font-medium text-foreground mb-3">
+                Investors
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Professional, qualified, and institutional investors seeking 
+                exposure to curated diamond strategies with regulated infrastructure.
+              </p>
+              <Link to="/tokenisation/investors">
+                <Button variant="gold-outline">
+                  Learn more
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Tokenised Diamonds */}
+      <section className="py-24 md:py-32 bg-card/50">
+        <div className="container">
+          <SectionHeading
+            title="Why tokenised diamonds"
+            subtitle="Billiton's auction and inventory expertise provides the foundation for transparent pricing and institutional-grade digital asset structures."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <FeatureCard
+              icon={Droplets}
+              title="Liquidity"
+              description="Transform traditionally illiquid diamond holdings into tradeable digital assets with broader market access."
+              index={0}
+            />
+            <FeatureCard
+              icon={Eye}
+              title="Transparency"
+              description="On-chain provenance, auditable reserves, and real-time reporting create unprecedented visibility."
+              index={1}
+            />
+            <FeatureCard
+              icon={Users}
+              title="Access"
+              description="Fractional ownership lowers barriers, enabling a wider range of qualified investors to participate."
+              index={2}
+            />
+            <FeatureCard
+              icon={ShieldCheck}
+              title="Professional Custody"
+              description="Institutional-grade vaulting, insurance, and segregated asset structures protect all stakeholders."
+              index={3}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works - High Level */}
+      <section className="py-24 md:py-32">
+        <div className="container">
+          <SectionHeading
+            title="How it works"
+            subtitle="A transparent, end-to-end process managed by Billiton."
+          />
+
+          <div className="flex flex-wrap justify-center gap-2 md:gap-0 mb-8">
+            <ProcessStep
+              step={1}
+              icon={Diamond}
+              title="Source & Certify"
+              index={0}
+            />
+            <ProcessStep
+              step={2}
+              icon={Vault}
+              title="Vault & Insure"
+              index={1}
+            />
+            <ProcessStep
+              step={3}
+              icon={FileCheck}
+              title="Structure & Tokenise"
+              index={2}
+            />
+            <ProcessStep
+              step={4}
+              icon={Coins}
+              title="Distribute & Invest"
+              index={3}
+            />
+            <ProcessStep
+              step={5}
+              icon={BarChart3}
+              title="Monitor & Redeem"
+              isLast
+              index={4}
+            />
+          </div>
+
+          <div className="text-center">
+            <Link to="/tokenisation/how-it-works">
+              <Button variant="outline">
+                See the full process
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-24 md:py-32 bg-card/50">
+        <div className="container">
+          <SectionHeading
+            title="What you can do with tokenised diamonds"
+          />
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <FeatureCard
+              icon={Package}
+              title="Tokenise vault inventory"
+              description="Convert stored diamonds into digital tokens, unlocking capital while maintaining ownership optionality."
+              index={0}
+            />
+            <FeatureCard
+              icon={PieChart}
+              title="Launch investment products"
+              description="Create diamond-backed funds, structured notes, or portfolio products for distribution to qualified investors."
+              index={1}
+            />
+            <FeatureCard
+              icon={Gem}
+              title="Fractional access"
+              description="Offer fractional ownership of high-value stones or curated parcels to a broader investor base."
+              index={2}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Governance */}
+      <section className="py-24 md:py-32">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-6">
+                Trust & governance
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Billiton brings decades of experience in rough and polished diamond auctions, 
+                combined with deep inventory management expertise, to the tokenisation space.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Our move into regulated digital asset structures is built on the same 
+                principles that have made us a trusted name in the diamond industry: 
+                transparency, rigorous due diligence, and client-first service.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {["Billiton Auctions", "Regulated Custody", "Independent Audit", "Institutional Compliance"].map((partner, i) => (
+                <div
+                  key={partner}
+                  className="p-6 rounded-xl bg-gradient-card border border-border/50 flex items-center justify-center text-center"
+                >
+                  <span className="text-sm font-medium text-muted-foreground">{partner}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Preview */}
+      <section className="py-24 md:py-32 bg-card/50">
+        <div className="container">
+          <SectionHeading
+            title="Frequently asked questions"
+          />
+
+          <div className="max-w-3xl mx-auto">
+            <FAQAccordion
+              items={[
+                {
+                  question: "Who can participate in tokenised diamond offerings?",
+                  answer: "Billiton's tokenised diamond products are designed for professional, qualified, and institutional investors. Eligibility varies by jurisdiction and product type. Our team will guide you through the suitability and onboarding process."
+                },
+                {
+                  question: "Where are the diamonds stored?",
+                  answer: "All diamonds backing tokenised products are held in secure, insured vaults operated by independent professional custodians. Vault locations and arrangements are disclosed in offering documentation."
+                },
+                {
+                  question: "Do I need digital asset experience to invest?",
+                  answer: "No prior digital asset experience is required. Billiton's platform is designed to guide investors through every step, from onboarding to monitoring their positions. Tokens can be held in platform custody or transferred to designated wallet solutions."
+                },
+                {
+                  question: "How is pricing determined?",
+                  answer: "Diamond pricing draws on Billiton's auction expertise and established price discovery mechanisms. Valuations are conducted by qualified assessors and regularly updated based on market conditions."
+                },
+              ]}
+            />
+
+            <div className="text-center mt-8">
+              <Link to="/tokenisation/faqs">
+                <Button variant="outline">
+                  View all FAQs
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <CTABand
+        title="Discuss your tokenisation or investment case with the Billiton team."
+        primaryCTA="Book a consultation"
+        secondaryCTA="Or email us directly"
+      />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default TokenisationHome;

@@ -77,7 +77,13 @@ const TokenisationHome = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <span className="relative">
+                  <Diamond className="w-4 h-4" />
+                  <span className="absolute inset-0 animate-spin" style={{ animationDuration: '3s' }}>
+                    <span className="absolute top-0 left-1/2 w-1 h-1 -translate-x-1/2 -translate-y-1 bg-primary rounded-full opacity-80" />
+                  </span>
+                </span>
                 Billiton Digital
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">

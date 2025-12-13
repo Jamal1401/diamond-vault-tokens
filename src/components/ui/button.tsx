@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_4px_30px_hsl(42_78%_55%/0.15)] hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_4px_30px_hsl(195_85%_55%/0.2)] hover:shadow-lg",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-border bg-transparent text-foreground hover:bg-secondary hover:text-secondary-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-secondary-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Custom Billiton variants
-        gold: "bg-gradient-to-br from-[hsl(42,78%,55%)] to-[hsl(38,70%,45%)] text-[hsl(220,20%,7%)] font-semibold shadow-[0_4px_30px_hsl(42_78%_55%/0.15)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        // Custom Billiton variants - updated to teal/blue
+        gold: "bg-gradient-to-br from-[hsl(195,85%,55%)] to-[hsl(195,70%,45%)] text-[hsl(220,15%,4%)] font-semibold shadow-[0_4px_30px_hsl(195_85%_55%/0.2)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
         "gold-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
         subtle: "bg-secondary/50 text-foreground hover:bg-secondary border border-border/50",
-        hero: "bg-gradient-to-br from-[hsl(42,78%,55%)] to-[hsl(38,70%,45%)] text-[hsl(220,20%,7%)] font-semibold text-base px-8 py-6 shadow-[0_4px_30px_hsl(42_78%_55%/0.15)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        hero: "bg-gradient-to-br from-[hsl(195,85%,55%)] to-[hsl(195,70%,45%)] text-[hsl(220,15%,4%)] font-semibold text-base px-8 py-6 shadow-[0_4px_30px_hsl(195_85%_55%/0.2)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
         "hero-outline": "border-2 border-primary/60 bg-transparent text-foreground hover:border-primary hover:bg-primary/10 text-base px-8 py-6",
       },
       size: {

@@ -18,7 +18,6 @@ import {
   ShieldCheck,
   FileText,
   Database,
-  Gavel,
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -57,7 +56,7 @@ const PhaseCard = ({ icon: Icon, title, items, index }: PhaseCardProps) => (
 );
 
 const processSteps = [
-  { icon: Gavel, label: "Sourcing & Auction" },
+  { icon: Search, label: "Sourcing & Selection" },
   { icon: FileCheck, label: "Certification" },
   { icon: Vault, label: "Vaulting" },
   { icon: Scale, label: "Legal Structure" },
@@ -185,8 +184,7 @@ const HowItWorks = () => {
               items={[
                 "Selection of eligible diamonds or parcels based on quality and market criteria",
                 "Verification of GIA, HRD, or other recognized certificates",
-                "Provenance checks and ownership chain documentation",
-                "Optional preliminary auctions for price discovery via Billiton platforms"
+                "Provenance checks and ownership chain documentation"
               ]}
               index={0}
             />
@@ -347,45 +345,6 @@ const HowItWorks = () => {
                 index={1}
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Integration with Auctions */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <SectionHeading
-              title="Integration with auctions"
-              align="left"
-            />
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-gradient-card border border-border/50"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Gavel className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-display text-xl font-medium text-foreground">
-                  Auction-Driven Price Discovery
-                </h3>
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Billiton's established auction platforms provide transparent price discovery 
-                for diamonds entering tokenisation structures. This ensures fair market 
-                valuations and builds investor confidence.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Certain auction lots can transition from traditional channels into digital 
-                structures as part of their lifecycle, offering sellers and buyers new 
-                options for liquidity and exposure.
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>

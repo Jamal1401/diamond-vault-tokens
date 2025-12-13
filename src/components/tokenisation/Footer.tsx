@@ -10,7 +10,6 @@ const footerLinks = {
   ],
   company: [
     { label: "About Billiton", href: "https://billitonauctions.com/about", external: true },
-    { label: "Auctions", href: "https://billitonauctions.com", external: true },
     { label: "Contact", href: "#contact" },
   ],
   legal: [
@@ -35,7 +34,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Institutional-grade diamond tokenisation. Combining auction expertise with regulated digital asset infrastructure.
+              Institutional-grade diamond tokenisation. Built on deep industry expertise and regulated digital asset infrastructure.
             </p>
           </div>
 

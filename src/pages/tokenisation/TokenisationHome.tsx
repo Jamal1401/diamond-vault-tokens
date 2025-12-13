@@ -79,10 +79,6 @@ const TokenisationHome = () => {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </ConsultationDialog>
-                <Button variant="hero-outline">
-                  <Download className="mr-2 w-5 h-5" />
-                  Download overview
-                </Button>
               </div>
             </motion.div>
 

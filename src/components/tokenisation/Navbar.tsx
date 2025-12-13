@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Diamond } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import { ConsultationDialog } from "./ConsultationDialog";
 const navLinks = [
   { href: "/tokenisation", label: "Overview" },
   { href: "/tokenisation/asset-owners", label: "Asset Owners" },
@@ -49,9 +49,11 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="gold" size="sm">
-              Book Consultation
-            </Button>
+            <ConsultationDialog>
+              <Button variant="gold" size="sm">
+                Book Consultation
+              </Button>
+            </ConsultationDialog>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,9 +92,11 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button variant="gold" className="w-full">
-                  Book Consultation
-                </Button>
+                <ConsultationDialog>
+                  <Button variant="gold" className="w-full" onClick={() => setIsOpen(false)}>
+                    Book Consultation
+                  </Button>
+                </ConsultationDialog>
               </div>
             </div>
           </motion.div>

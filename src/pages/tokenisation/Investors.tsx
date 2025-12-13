@@ -81,17 +81,20 @@ const investmentTypes = [
   {
     icon: Gem,
     title: "Single-stone or parcel ARVAs",
-    description: "Direct exposure to specific certified diamonds or curated stone parcels via Asset-Referenced Virtual Assets."
+    description: "Direct exposure to specific certified diamonds or curated stone parcels via Asset-Referenced Virtual Assets.",
+    isArva: true
   },
   {
     icon: PieChart,
     title: "Diamond pools / funds",
-    description: "Diversified exposure across a managed portfolio of tokenised diamonds."
+    description: "Diversified exposure across a managed portfolio of tokenised diamonds.",
+    isArva: false
   },
   {
     icon: FileStack,
     title: "Structured products",
-    description: "Diamond-backed notes and structured vehicles for specific risk/return profiles."
+    description: "Diamond-backed notes and structured vehicles for specific risk/return profiles.",
+    isArva: false
   },
 ];
 
@@ -99,7 +102,7 @@ const journeySteps = [
   { icon: ClipboardCheck, title: "Register & KYC" },
   { icon: FileText, title: "Review offerings" },
   { icon: CreditCard, title: "Subscribe" },
-  { icon: Wallet, title: "Receive ARVAs" },
+  { icon: Wallet, title: "Receive ARVAs", hasRwaBadge: true },
   { icon: LineChart, title: "Monitor & exit" },
 ];
 
@@ -184,7 +187,11 @@ const Investors = () => {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               For professional, qualified and institutional investors seeking 
-              exposure to diamonds through Asset-Referenced Virtual Assets (ARVAs).
+              exposure to diamonds through Asset-Referenced Virtual Assets (ARVAs) — 
+              <span className="inline-flex items-center gap-1.5 ml-1">
+                <span className="px-2 py-0.5 text-xs font-semibold rounded bg-primary/20 text-primary border border-primary/30">RWA</span>
+                <span className="text-muted-foreground">Real-World Asset tokens.</span>
+              </span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero">
@@ -248,18 +255,26 @@ const Investors = () => {
         <div className="container">
           <SectionHeading
             title="What you can invest in"
-            subtitle="Billiton offers a range of ARVA products tailored to different investor needs."
+            subtitle="Billiton offers a range of ARVA products — regulated RWA tokens — tailored to different investor needs."
           />
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {investmentTypes.map((type, i) => (
-              <FeatureCard
-                key={type.title}
-                icon={type.icon}
-                title={type.title}
-                description={type.description}
-                index={i}
-              />
+              <div key={type.title} className="relative">
+                {type.isArva && (
+                  <div className="absolute -top-2 -right-2 z-10">
+                    <span className="px-2 py-1 text-[10px] font-bold rounded bg-primary text-primary-foreground shadow-md">
+                      RWA
+                    </span>
+                  </div>
+                )}
+                <FeatureCard
+                  icon={type.icon}
+                  title={type.title}
+                  description={type.description}
+                  index={i}
+                />
+              </div>
             ))}
           </div>
         </div>

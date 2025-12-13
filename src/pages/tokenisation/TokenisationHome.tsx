@@ -64,8 +64,9 @@ const TokenisationHome = () => {
                 Billiton Digital
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
-                Institutional-grade{" "}
-                <span className="text-gradient-gold">diamond tokenisation.</span>
+                The first trusted, VARA-regulated{" "}
+                <span className="text-gradient-gold">diamond tokenisation platform</span>{" "}
+                from the heart of Dubai's DMCC.
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Billiton with its Blockchain partner provides a VARA regulated digital asset platform, 

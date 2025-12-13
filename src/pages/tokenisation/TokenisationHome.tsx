@@ -65,8 +65,8 @@ const TokenisationHome = () => {
                 <span className="text-gradient-gold">diamond tokenisation.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Billiton combines auction-driven price discovery with a regulated digital asset platform, 
-                unlocking liquidity for diamond holders and new opportunities for professional investors.
+                Billiton provides a regulated digital asset platform, unlocking liquidity 
+                for diamond holders and new opportunities for professional investors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="hero">
@@ -200,7 +200,7 @@ const TokenisationHome = () => {
         <div className="container">
           <SectionHeading
             title="Why tokenised diamonds"
-            subtitle="Billiton's auction and inventory expertise provides the foundation for transparent pricing and institutional-grade digital asset structures."
+            subtitle="Billiton's deep industry expertise and inventory management capabilities provide the foundation for transparent pricing and institutional-grade digital asset structures."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -329,8 +329,8 @@ const TokenisationHome = () => {
                 Trust & governance
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Billiton brings decades of experience in rough and polished diamond auctions, 
-                combined with deep inventory management expertise, to the tokenisation space.
+                Billiton brings decades of experience in the diamond industry, combined with 
+                deep inventory management expertise, to the tokenisation space.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Our move into regulated digital asset structures is built on the same 
@@ -346,7 +346,7 @@ const TokenisationHome = () => {
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-4"
             >
-              {["Billiton Auctions", "Regulated Custody", "Independent Audit", "Institutional Compliance"].map((partner, i) => (
+              {["Billiton Diamonds", "Regulated Custody", "Independent Audit", "Institutional Compliance"].map((partner, i) => (
                 <div
                   key={partner}
                   className="p-6 rounded-xl bg-gradient-card border border-border/50 flex items-center justify-center text-center"
@@ -383,7 +383,7 @@ const TokenisationHome = () => {
                 },
                 {
                   question: "How is pricing determined?",
-                  answer: "Diamond pricing draws on Billiton's auction expertise and established price discovery mechanisms. Valuations are conducted by qualified assessors and regularly updated based on market conditions."
+                  answer: "Diamond pricing draws on Billiton's deep industry expertise and established valuation mechanisms. Valuations are conducted by qualified assessors and regularly updated based on market conditions."
                 },
               ]}
             />

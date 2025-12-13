@@ -196,7 +196,7 @@ const AssetOwners = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Billiton combines auction-driven price discovery, deep inventory expertise, 
+                Billiton combines deep industry expertise, advanced inventory management, 
                 and institutional-grade digital asset infrastructure to design and launch 
                 tokenised diamond products tailored to your needs.
               </p>

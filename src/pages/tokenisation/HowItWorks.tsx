@@ -274,8 +274,8 @@ const HowItWorks = () => {
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokenisation while diamonds remain on the merchant's premises, integrated through 
-                API connection. Merchants can selectively tokenise portions of inventory.
+                Tokens are minted while diamonds remain on the merchant's premises, integrated through 
+                API connection. However, ARVAs are only created upon sale when goods are transferred to the custodian.
               </p>
 
               <div className="space-y-6">
@@ -286,11 +286,11 @@ const HowItWorks = () => {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      "Select and mint ARVAs via inventory management system",
-                      "ARVAs created backed by merchant's verified records",
+                      "Mint tokens via inventory management system",
                       "Daily reconciliation and inventory accuracy maintained",
-                      "Physical transfer to vault upon sale confirmation",
-                      "Token sent to buyer upon settlement"
+                      "Upon sale, diamonds transfer to custodian vault",
+                      "ARVA created once goods are with the custodian",
+                      "ARVA sent to buyer upon settlement"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -385,8 +385,8 @@ const HowItWorks = () => {
                 On-Premise Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Tokenisation happens <strong className="text-foreground">while diamonds remain with the merchant</strong>. 
-                Physical vault transfer occurs only upon sale, providing flexibility for merchants.
+                Tokens are minted <strong className="text-foreground">while diamonds remain with the merchant</strong>, but 
+                ARVAs are only created <strong className="text-foreground">upon sale</strong> when goods are transferred to the custodian.
               </p>
             </div>
           </motion.div>

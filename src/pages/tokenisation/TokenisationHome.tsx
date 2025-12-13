@@ -10,6 +10,7 @@ import { Footer } from "@/components/tokenisation/Footer";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
+  ArrowDown,
   Download,
   Building2,
   TrendingUp,
@@ -25,6 +26,7 @@ import {
   Gem,
   Package,
   PieChart,
+  ShoppingCart,
 } from "lucide-react";
 
 const TokenisationHome = () => {
@@ -87,36 +89,60 @@ const TokenisationHome = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-12">
-                <div className="flex items-center justify-between gap-4">
+              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-10">
+                {/* Top Row: Diamonds → Sale */}
+                <div className="flex items-center justify-center gap-4 mb-6">
                   {/* Diamonds */}
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-secondary/50 flex items-center justify-center mb-3">
-                      <Gem className="w-10 h-10 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center mb-2">
+                      <Gem className="w-8 h-8 text-primary" />
                     </div>
                     <span className="text-sm font-medium text-foreground">Diamonds</span>
                     <span className="text-xs text-muted-foreground">Certified stones</span>
                   </div>
 
                   {/* Arrow */}
-                  <ArrowRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
 
+                  {/* Sale */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/50 flex items-center justify-center mb-2">
+                      <ShoppingCart className="w-8 h-8 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">Sale</span>
+                    <span className="text-xs text-muted-foreground">Transaction</span>
+                  </div>
+                </div>
+
+                {/* Split Arrow */}
+                <div className="flex justify-center mb-6">
+                  <div className="flex items-center gap-8">
+                    <div className="flex flex-col items-center">
+                      <div className="w-px h-4 bg-muted-foreground/30" />
+                      <ArrowDown className="w-4 h-4 text-muted-foreground -mt-1" />
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <div className="w-px h-4 bg-muted-foreground/30" />
+                      <ArrowDown className="w-4 h-4 text-muted-foreground -mt-1" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Row: Vault & ARVAs */}
+                <div className="flex items-center justify-center gap-8">
                   {/* Vault */}
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-secondary/50 flex items-center justify-center mb-3">
-                      <Vault className="w-10 h-10 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-2">
+                      <Vault className="w-8 h-8 text-primary" />
                     </div>
                     <span className="text-sm font-medium text-foreground">Vault</span>
                     <span className="text-xs text-muted-foreground">Secure custody</span>
                   </div>
 
-                  {/* Arrow */}
-                  <ArrowRight className="w-6 h-6 text-muted-foreground flex-shrink-0" />
-
-                  {/* Tokens */}
+                  {/* ARVAs */}
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-3 ring-2 ring-primary/30">
-                      <Coins className="w-10 h-10 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-2 ring-2 ring-primary/30">
+                      <Coins className="w-8 h-8 text-primary" />
                     </div>
                     <span className="text-sm font-medium text-foreground">ARVAs</span>
                     <span className="text-xs text-muted-foreground">Digital assets</span>

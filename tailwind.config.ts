@@ -52,19 +52,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        teal: {
-          DEFAULT: "hsl(var(--teal))",
-          muted: "hsl(var(--teal-muted))",
-          glow: "hsl(var(--teal-glow))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          muted: "hsl(var(--gold-muted))",
+          glow: "hsl(var(--gold-glow))",
         },
-        dark: {
-          DEFAULT: "hsl(var(--dark))",
-          light: "hsl(var(--dark-light))",
+        charcoal: {
+          DEFAULT: "hsl(var(--charcoal))",
+          light: "hsl(var(--charcoal-light))",
         },
         slate: "hsl(var(--slate))",
-        light: {
-          DEFAULT: "hsl(var(--light))",
-          muted: "hsl(var(--light-muted))",
+        ivory: {
+          DEFAULT: "hsl(var(--ivory))",
+          muted: "hsl(var(--ivory-muted))",
+        },
+        diamond: {
+          DEFAULT: "hsl(var(--diamond))",
+          blue: "hsl(var(--diamond-blue))",
+          pink: "hsl(var(--diamond-pink))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -115,6 +120,18 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
         },
+        sparkle: {
+          "0%, 100%": { opacity: "0", transform: "scale(0) rotate(0deg)" },
+          "50%": { opacity: "1", transform: "scale(1) rotate(180deg)" },
+        },
+        "diamond-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(42 78% 55% / 0.2), 0 0 40px hsl(200 30% 90% / 0.1)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 40px hsl(42 78% 55% / 0.4), 0 0 80px hsl(200 30% 90% / 0.2)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +141,8 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         shimmer: "shimmer 8s ease-in-out infinite",
         glow: "glow 3s ease-in-out infinite",
+        sparkle: "sparkle 2s ease-in-out infinite",
+        "diamond-pulse": "diamond-pulse 3s ease-in-out infinite",
       },
     },
   },

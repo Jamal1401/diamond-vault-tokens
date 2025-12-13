@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FAQAccordion } from "@/components/tokenisation/FAQAccordion";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
+import { VaultBasedDiagram, OnPremiseDiagram } from "@/components/tokenisation/TokenLifecycleDiagram";
 import {
   ArrowRight,
   Download,
@@ -340,6 +341,51 @@ const HowItWorks = () => {
                   ARVAs can be bought, sold, or redeemed for their physical counterparts.
                 </p>
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Visual Lifecycle Diagrams */}
+      <section className="py-20 md:py-28 bg-card/50">
+        <div className="container">
+          <SectionHeading
+            title="Lifecycle flow diagrams"
+            subtitle="Visual representation of how diamonds move through each tokenisation model."
+          />
+
+          <div className="space-y-8 max-w-6xl mx-auto">
+            <VaultBasedDiagram />
+            <OnPremiseDiagram />
+          </div>
+
+          {/* Key Differences Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto mt-12 grid md:grid-cols-2 gap-6"
+          >
+            <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
+              <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                <Vault className="w-5 h-5 text-primary" />
+                Vault-Based Key Point
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Diamonds must be physically transferred to the vault <strong className="text-foreground">before</strong> tokenisation. 
+                This ensures every ARVA is backed by a verified, secured asset from day one.
+              </p>
+            </div>
+            <div className="p-6 rounded-xl bg-muted/50 border border-border/50">
+              <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                <Building className="w-5 h-5 text-primary" />
+                On-Premise Key Point
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Tokenisation happens <strong className="text-foreground">while diamonds remain with the merchant</strong>. 
+                Physical vault transfer occurs only upon sale, providing flexibility for merchants.
+              </p>
             </div>
           </motion.div>
         </div>

@@ -8,6 +8,7 @@ import { CTABand } from "@/components/tokenisation/CTABand";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
+import { FloatingDiamond } from "@/components/tokenisation/FloatingDiamond";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -58,6 +59,9 @@ const TokenisationHome = () => {
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-diamond/5 via-transparent to-primary/5 rounded-full blur-3xl animate-glow" />
           <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-primary/5 via-transparent to-diamond-pink/5 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1.5s' }} />
         </div>
+        
+        {/* 3D Floating Diamond */}
+        <FloatingDiamond />
         
         {/* Subtle grid pattern */}
         <div 

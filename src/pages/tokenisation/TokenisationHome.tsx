@@ -71,9 +71,7 @@ const TokenisationHome = () => {
                 <span className="text-gradient-gold text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold">DMCC</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Billiton with its Blockchain partner provides a VARA regulated digital asset platform, 
-                unlocking liquidity for diamond manufacturers, traders, asset holders and new opportunities 
-                for professional investors.
+                Billiton, together with its blockchain partner, is launching the first trusted, VARA-regulated diamond tokenisation platform from Dubai's DMCC—unlocking new liquidity for manufacturers, traders and asset holders, and opening a powerful on-chain asset class for professional investors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <ConsultationDialog>

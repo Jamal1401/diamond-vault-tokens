@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { LucideIcon, ChevronRight } from "lucide-react";
+import { LucideIcon, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProcessStepProps {
@@ -17,37 +16,44 @@ export const ProcessStep = ({
   title, 
   description,
   isLast = false,
-  index = 0 
 }: ProcessStepProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="flex items-center"
-    >
+    <div className="flex items-center">
       <div className="flex flex-col items-center text-center">
+        {/* Step number badge */}
         <div className="relative">
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-card border border-border/50 flex items-center justify-center group hover:border-primary/50 transition-all">
-            <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+          {/* Main icon container */}
+          <div className="w-18 h-18 md:w-22 md:h-22 rounded-2xl bg-card border-2 border-border flex items-center justify-center relative overflow-hidden">
+            {/* Inner glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+            <Icon className="w-8 h-8 md:w-9 md:h-9 text-primary relative z-10" />
           </div>
-          <span className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+          
+          {/* Step number */}
+          <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shadow-lg">
             {step}
-          </span>
+          </div>
         </div>
-        <h4 className="mt-4 font-medium text-foreground text-sm md:text-base max-w-[120px]">
+        
+        {/* Title */}
+        <h4 className="mt-4 font-semibold text-foreground text-sm md:text-base max-w-[130px] leading-tight">
           {title}
         </h4>
+        
         {description && (
-          <p className="mt-1 text-xs text-muted-foreground max-w-[140px]">
+          <p className="mt-2 text-xs text-muted-foreground max-w-[150px] leading-relaxed">
             {description}
           </p>
         )}
       </div>
+      
+      {/* Connector arrow */}
       {!isLast && (
-        <ChevronRight className="w-5 h-5 text-muted-foreground mx-2 md:mx-4 flex-shrink-0" />
+        <div className="flex items-center mx-3 md:mx-6">
+          <div className="w-8 md:w-12 h-[2px] bg-gradient-to-r from-border to-primary/40" />
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-primary/60 -ml-1" />
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 };

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FeatureCard } from "@/components/tokenisation/FeatureCard";
@@ -42,22 +41,9 @@ const TokenisationHome = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.08),_transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--primary)/0.05),_transparent_50%)]" />
         
-        {/* Diamond sparkle overlay */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Floating sparkle dots */}
-          <div className="absolute top-[15%] left-[10%] w-1 h-1 bg-diamond rounded-full animate-sparkle" style={{ animationDelay: '0s' }} />
-          <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-primary/60 rounded-full animate-sparkle" style={{ animationDelay: '0.5s' }} />
-          <div className="absolute top-[40%] left-[20%] w-1 h-1 bg-diamond-blue rounded-full animate-sparkle" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-[60%] right-[25%] w-1 h-1 bg-diamond-pink rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }} />
-          <div className="absolute top-[75%] left-[15%] w-1.5 h-1.5 bg-primary/50 rounded-full animate-sparkle" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-[30%] right-[40%] w-1 h-1 bg-diamond rounded-full animate-sparkle" style={{ animationDelay: '0.7s' }} />
-          <div className="absolute top-[55%] left-[35%] w-1 h-1 bg-diamond-blue rounded-full animate-sparkle" style={{ animationDelay: '1.2s' }} />
-          <div className="absolute top-[85%] right-[10%] w-1 h-1 bg-primary/40 rounded-full animate-sparkle" style={{ animationDelay: '0.3s' }} />
-          
-          {/* Subtle diamond refraction effect */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-diamond/5 via-transparent to-primary/5 rounded-full blur-3xl animate-glow" />
-          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-primary/5 via-transparent to-diamond-pink/5 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1.5s' }} />
-        </div>
+        {/* Subtle ambient glow */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
         
         {/* Subtle grid pattern */}
         <div 
@@ -72,11 +58,7 @@ const TokenisationHome = () => {
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left side - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                 Billiton Digital
               </span>
@@ -98,16 +80,11 @@ const TokenisationHome = () => {
                   </Button>
                 </ConsultationDialog>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right side - Pipeline graphic */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-10 diamond-shine animate-diamond-pulse">
+            <div className="relative hidden lg:block">
+              <div className="relative bg-card rounded-3xl border-2 border-border p-8 md:p-10">
                 {/* Top Row: Diamonds → Sale */}
                 <div className="flex items-center justify-center gap-4 mb-6">
                   {/* Diamonds */}
@@ -171,7 +148,7 @@ const TokenisationHome = () => {
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl" />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -185,65 +162,59 @@ const TokenisationHome = () => {
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
             {/* Diamond Manufacturers & Traders Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="group relative p-8 md:p-10 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Building2 className="w-8 h-8 text-primary" />
+            <div className="group relative p-8 md:p-10 rounded-3xl bg-card border-2 border-border hover:border-primary/40 transition-colors duration-200">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="relative">
+                <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <Building2 className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-3">
+                  Diamond manufacturers and traders
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Tokenisation transforms certified stones and inventory into liquid, tradeable digital assets, 
+                  allowing manufacturers and traders to access global demand without moving goods until settlement.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  It reduces reliance on traditional brokers, cuts transaction and logistics costs, and supports 
+                  new financing options such as inventory-backed credit and forward sales against tokenised stock.
+                </p>
+                <Link to="/tokenisation/asset-owners">
+                  <Button variant="gold-outline">
+                    Learn more
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
-              <h3 className="font-display text-2xl font-medium text-foreground mb-3">
-                Diamond manufacturers and traders
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Tokenisation transforms certified stones and inventory into liquid, tradeable digital assets, 
-                allowing manufacturers and traders to access global demand without moving goods until settlement.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                It reduces reliance on traditional brokers, cuts transaction and logistics costs, and supports 
-                new financing options such as inventory-backed credit and forward sales against tokenised stock.
-              </p>
-              <Link to="/tokenisation/asset-owners">
-                <Button variant="gold-outline">
-                  Learn more
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </motion.div>
+            </div>
 
             {/* Professional & Institutional Investors Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="group relative p-8 md:p-10 rounded-3xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <TrendingUp className="w-8 h-8 text-primary" />
+            <div className="group relative p-8 md:p-10 rounded-3xl bg-card border-2 border-border hover:border-primary/40 transition-colors duration-200">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="relative">
+                <div className="mb-6 w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <TrendingUp className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-3">
+                  Professional and institutional investors
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  For professional investors, tokenised diamonds and gemstones provide fractional, transparent access 
+                  to a historically illiquid asset class with on-chain provenance and certification.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Tokens can be traded 24/7, integrated into portfolios alongside other RWAs, and used for 
+                  diversification, yield strategies, or hedging, while retaining the option to redeem into physical 
+                  stones via regulated custody.
+                </p>
+                <Link to="/tokenisation/investors">
+                  <Button variant="gold-outline">
+                    Learn more
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
-              <h3 className="font-display text-2xl font-medium text-foreground mb-3">
-                Professional and institutional investors
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                For professional investors, tokenised diamonds and gemstones provide fractional, transparent access 
-                to a historically illiquid asset class with on-chain provenance and certification.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokens can be traded 24/7, integrated into portfolios alongside other RWAs, and used for 
-                diversification, yield strategies, or hedging, while retaining the option to redeem into physical 
-                stones via regulated custody.
-              </p>
-              <Link to="/tokenisation/investors">
-                <Button variant="gold-outline">
-                  Learn more
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -378,13 +349,8 @@ const TokenisationHome = () => {
       <section className="py-24 md:py-32">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-6">
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
                 Trust & governance
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -396,24 +362,18 @@ const TokenisationHome = () => {
                 principles that have made us a trusted name in the diamond industry: 
                 transparency, rigorous due diligence, and client-first service.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {["Billiton Diamonds", "Regulated Custody", "Independent Audit", "Institutional Compliance"].map((partner, i) => (
+            <div className="grid grid-cols-2 gap-4">
+              {["Billiton Diamonds", "Regulated Custody", "Independent Audit", "Institutional Compliance"].map((partner) => (
                 <div
                   key={partner}
-                  className="p-6 rounded-xl bg-gradient-card border border-border/50 flex items-center justify-center text-center"
+                  className="p-6 rounded-xl bg-card border-2 border-border flex items-center justify-center text-center"
                 >
                   <span className="text-sm font-medium text-muted-foreground">{partner}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

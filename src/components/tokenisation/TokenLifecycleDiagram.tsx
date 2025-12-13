@@ -156,60 +156,67 @@ export const OnPremiseDiagram = () => {
           <h3 className="font-display text-lg md:text-xl font-medium text-foreground">
             On-Premise Model Flow
           </h3>
-          <p className="text-sm text-muted-foreground">Merchant Custody</p>
+          <p className="text-sm text-muted-foreground">Merchant Custody → ARVA on Sale</p>
         </div>
       </div>
 
       {/* Desktop Flow */}
       <div className="hidden md:block">
-        <div className="flex items-center justify-center gap-2 lg:gap-4">
-          <FlowStep icon={Building} label="Merchant" sublabel="Holds Inventory" delay={0} />
-          <FlowArrow delay={0.1} />
-          <FlowStep icon={FileCheck} label="API Verify" sublabel="System Integration" delay={0.15} />
-          <FlowArrow delay={0.2} />
-          <FlowStep icon={Coins} label="Mint ARVA" sublabel="Token Created" highlight delay={0.25} />
-          <FlowArrow delay={0.3} />
-          <FlowStep icon={Users} label="Marketplace" sublabel="List & Trade" delay={0.35} />
+        {/* Phase 1: Token Minting (No ARVA yet) */}
+        <div className="mb-4">
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 1: Token Minting (Merchant Holds Inventory)</p>
+          <div className="flex items-center justify-center gap-2 lg:gap-4">
+            <FlowStep icon={Building} label="Merchant" sublabel="Holds Inventory" delay={0} />
+            <FlowArrow delay={0.1} />
+            <FlowStep icon={FileCheck} label="API Verify" sublabel="System Integration" delay={0.15} />
+            <FlowArrow delay={0.2} />
+            <FlowStep icon={Coins} label="Mint Token" sublabel="Not ARVA Yet" highlight delay={0.25} />
+            <FlowArrow delay={0.3} />
+            <FlowStep icon={Users} label="Marketplace" sublabel="List for Sale" delay={0.35} />
+          </div>
         </div>
 
-        {/* Sale & Settlement Flow */}
+        {/* Phase 2: Sale triggers ARVA Creation */}
         <div className="mt-8 pt-8 border-t border-border/50">
-          <p className="text-sm text-muted-foreground text-center mb-6">Sale & Settlement Flow</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Sale Triggers ARVA Creation</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
             <FlowStep icon={ShoppingCart} label="Sale" sublabel="Buyer Purchase" delay={0.4} />
             <FlowArrow delay={0.45} />
-            <FlowStep icon={Truck} label="Transfer" sublabel="To Central Vault" delay={0.5} />
+            <FlowStep icon={Truck} label="Transfer" sublabel="To Custodian" delay={0.5} />
             <FlowArrow delay={0.55} />
-            <FlowStep icon={Vault} label="Vault Custody" sublabel="Verified" highlight delay={0.6} />
+            <FlowStep icon={Vault} label="Custodian" sublabel="Receives Goods" highlight delay={0.6} />
             <FlowArrow delay={0.65} />
-            <FlowStep icon={Users} label="Settlement" sublabel="Token to Buyer" delay={0.7} />
+            <FlowStep icon={Diamond} label="ARVA Created" sublabel="Fully Backed" highlight delay={0.7} />
+            <FlowArrow delay={0.75} />
+            <FlowStep icon={Users} label="Buyer" sublabel="Receives ARVA" delay={0.8} />
           </div>
         </div>
       </div>
 
       {/* Mobile Flow */}
       <div className="md:hidden space-y-4">
+        <p className="text-xs text-muted-foreground text-center uppercase tracking-wider">Phase 1: Token Minting</p>
         <div className="flex items-center justify-between">
           <FlowStep icon={Building} label="Merchant" sublabel="Inventory" delay={0} />
           <FlowArrow delay={0.1} />
           <FlowStep icon={FileCheck} label="API" sublabel="Verify" delay={0.15} />
           <FlowArrow delay={0.2} />
-          <FlowStep icon={Coins} label="Mint" highlight delay={0.25} />
+          <FlowStep icon={Coins} label="Token" sublabel="Not ARVA" highlight delay={0.25} />
         </div>
         <div className="flex justify-center">
           <FlowArrow direction="down" delay={0.3} />
         </div>
         <div className="flex items-center justify-center">
-          <FlowStep icon={Users} label="Marketplace" delay={0.35} />
+          <FlowStep icon={Users} label="Marketplace" sublabel="List for Sale" delay={0.35} />
         </div>
         <div className="pt-6 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4">Sale & Settlement</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Sale → ARVA</p>
           <div className="flex items-center justify-between">
             <FlowStep icon={ShoppingCart} label="Sale" delay={0.4} />
             <FlowArrow delay={0.45} />
-            <FlowStep icon={Vault} label="Vault" highlight delay={0.5} />
+            <FlowStep icon={Vault} label="Custodian" highlight delay={0.5} />
             <FlowArrow delay={0.55} />
-            <FlowStep icon={Users} label="Buyer" delay={0.6} />
+            <FlowStep icon={Diamond} label="ARVA" sublabel="Created" highlight delay={0.6} />
           </div>
         </div>
       </div>

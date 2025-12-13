@@ -118,8 +118,8 @@ const TokenisationHome = () => {
                     <div className="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-3 ring-2 ring-primary/30">
                       <Coins className="w-10 h-10 text-primary" />
                     </div>
-                    <span className="text-sm font-medium text-foreground">Tokens</span>
-                    <span className="text-xs text-muted-foreground">Digital access</span>
+                    <span className="text-sm font-medium text-foreground">ARVAs</span>
+                    <span className="text-xs text-muted-foreground">Digital assets</span>
                   </div>
                 </div>
 
@@ -370,20 +370,20 @@ const TokenisationHome = () => {
             <FAQAccordion
               items={[
                 {
+                  question: "What is an ARVA?",
+                  answer: "An Asset-Referenced Virtual Asset (ARVA) is a digital token that represents ownership of a physical diamond. Each ARVA is backed 1:1 by a certified, vaulted diamond, ensuring complete transparency and traceability on the blockchain."
+                },
+                {
                   question: "Who can participate in tokenised diamond offerings?",
                   answer: "Billiton's tokenised diamond products are designed for professional, qualified, and institutional investors. Eligibility varies by jurisdiction and product type. Our team will guide you through the suitability and onboarding process."
                 },
                 {
                   question: "Where are the diamonds stored?",
-                  answer: "All diamonds backing tokenised products are held in secure, insured vaults operated by independent professional custodians. Vault locations and arrangements are disclosed in offering documentation."
+                  answer: "All diamonds backing ARVAs are held in secure, insured vaults operated by independent professional custodians. Vault locations and arrangements are disclosed in offering documentation."
                 },
                 {
-                  question: "Do I need digital asset experience to invest?",
-                  answer: "No prior digital asset experience is required. Billiton's platform is designed to guide investors through every step, from onboarding to monitoring their positions. Tokens can be held in platform custody or transferred to designated wallet solutions."
-                },
-                {
-                  question: "How is pricing determined?",
-                  answer: "Diamond pricing draws on Billiton's deep industry expertise and established valuation mechanisms. Valuations are conducted by qualified assessors and regularly updated based on market conditions."
+                  question: "What tokenisation models are available?",
+                  answer: "We offer two models: Vault-Based Tokenisation where diamonds are transferred to approved custody before minting, and On-Premise Tokenisation where merchants can tokenise from their existing infrastructure with API integration."
                 },
               ]}
             />

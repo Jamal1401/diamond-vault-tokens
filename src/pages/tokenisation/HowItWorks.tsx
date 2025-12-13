@@ -356,6 +356,35 @@ const HowItWorks = () => {
             subtitle="Visual representation of how diamonds move through each tokenisation model."
           />
 
+          {/* Token vs ARVA Legend */}
+          <div className="max-w-4xl mx-auto mb-10 p-5 rounded-xl bg-muted/30 border border-border/50">
+            <h4 className="text-sm font-medium text-foreground mb-4 text-center">Understanding the Difference</h4>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50 border border-border/30">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 border-2 border-primary flex items-center justify-center flex-shrink-0">
+                  <Coins className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium text-foreground text-sm mb-1">Token</h5>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    A digital representation minted on the blockchain. In the On-Premise model, tokens can exist before the physical asset is with the custodian.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-lg bg-primary/5 border border-primary/20">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 border-2 border-primary flex items-center justify-center flex-shrink-0">
+                  <Diamond className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium text-foreground text-sm mb-1">ARVA (Asset-Referenced Virtual Asset)</h5>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    A fully-backed token where the physical diamond is verified and held by the custodian. ARVAs are always 1:1 backed.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-8 max-w-6xl mx-auto">
             <VaultBasedDiagram />
             <OnPremiseDiagram />

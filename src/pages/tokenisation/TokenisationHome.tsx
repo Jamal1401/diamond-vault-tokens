@@ -239,7 +239,7 @@ const TokenisationHome = () => {
         <div className="container">
           <SectionHeading
             title="Why tokenised diamonds"
-            subtitle="Billiton's deep industry expertise and inventory management capabilities provide the foundation for transparent pricing and institutional-grade digital asset structures."
+            subtitle="Tokenised diamonds are a gateway into a multi-trillion-dollar RWA ecosystem that is projected to surpass 9 trillion USD in tokenised real-world assets by 2030. Diamonds are uniquely suited to this shift because they combine high value density, global demand and verifiable certification, making them ideal collateral and portfolio assets in an on-chain financial system."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

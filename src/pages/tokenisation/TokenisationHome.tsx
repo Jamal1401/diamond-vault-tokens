@@ -170,7 +170,7 @@ const TokenisationHome = () => {
           />
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {/* Asset Owners Card */}
+            {/* Diamond Manufacturers & Traders Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,11 +182,15 @@ const TokenisationHome = () => {
                 <Building2 className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-2xl font-medium text-foreground mb-3">
-                Asset Owners
+                Diamond manufacturers and traders
               </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Tokenisation transforms certified stones and inventory into liquid, tradeable digital assets, 
+                allowing manufacturers and traders to access global demand without moving goods until settlement.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Mining companies, vault providers, and collectors seeking to unlock 
-                liquidity from diamond holdings without full divestment.
+                It reduces reliance on traditional brokers, cuts transaction and logistics costs, and supports 
+                new financing options such as inventory-backed credit and forward sales against tokenised stock.
               </p>
               <Link to="/tokenisation/asset-owners">
                 <Button variant="gold-outline">
@@ -196,7 +200,7 @@ const TokenisationHome = () => {
               </Link>
             </motion.div>
 
-            {/* Investors Card */}
+            {/* Professional & Institutional Investors Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,11 +212,16 @@ const TokenisationHome = () => {
                 <TrendingUp className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-2xl font-medium text-foreground mb-3">
-                Investors
+                Professional and institutional investors
               </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For professional investors, tokenised diamonds and gemstones provide fractional, transparent access 
+                to a historically illiquid asset class with on-chain provenance and certification.
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Professional, qualified, and institutional investors seeking 
-                exposure to curated diamond strategies with regulated infrastructure.
+                Tokens can be traded 24/7, integrated into portfolios alongside other RWAs, and used for 
+                diversification, yield strategies, or hedging, while retaining the option to redeem into physical 
+                stones via regulated custody.
               </p>
               <Link to="/tokenisation/investors">
                 <Button variant="gold-outline">

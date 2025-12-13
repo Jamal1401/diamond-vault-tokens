@@ -7,6 +7,7 @@ import { FAQAccordion } from "@/components/tokenisation/FAQAccordion";
 import { CTABand } from "@/components/tokenisation/CTABand";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
+import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -67,14 +68,17 @@ const TokenisationHome = () => {
                 <span className="text-gradient-gold">diamond tokenisation.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                Billiton provides a regulated digital asset platform, unlocking liquidity 
-                for diamond holders and new opportunities for professional investors.
+                Billiton with its Blockchain partner provides a VARA regulated digital asset platform, 
+                unlocking liquidity for diamond manufacturers, traders, asset holders and new opportunities 
+                for professional investors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero">
-                  Book a consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <ConsultationDialog>
+                  <Button variant="hero">
+                    Book a consultation
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </ConsultationDialog>
                 <Button variant="hero-outline">
                   <Download className="mr-2 w-5 h-5" />
                   Download overview

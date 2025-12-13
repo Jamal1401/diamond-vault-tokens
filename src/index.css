@@ -8,73 +8,80 @@
   }
 
   :root {
-    /* Core palette - Deep dark theme matching billitonauctions.com */
-    --background: 220 15% 4%;
-    --foreground: 210 20% 98%;
+    /* Core palette - Dark institutional theme */
+    --background: 220 20% 7%;
+    --foreground: 45 10% 95%;
 
-    --card: 220 15% 7%;
-    --card-foreground: 210 20% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 45 10% 95%;
 
-    --popover: 220 15% 7%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 45 10% 95%;
 
-    /* Light blue/teal accent matching Billiton brand */
-    --primary: 195 85% 55%;
-    --primary-foreground: 220 15% 4%;
+    /* Gold/Amber accent for luxury diamond feel */
+    --primary: 42 78% 55%;
+    --primary-foreground: 220 20% 7%;
 
-    /* Muted dark elements */
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 210 20% 90%;
+    /* Muted slate for secondary elements */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 45 10% 85%;
 
-    --muted: 220 15% 10%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 195 70% 45%;
-    --accent-foreground: 220 15% 4%;
+    --accent: 42 60% 45%;
+    --accent-foreground: 220 20% 7%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 45 10% 95%;
 
-    --border: 220 15% 15%;
-    --input: 220 15% 10%;
-    --ring: 195 85% 55%;
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 42 78% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --teal: 195 85% 55%;
-    --teal-muted: 195 50% 40%;
-    --teal-glow: 195 90% 65%;
-    --dark: 220 15% 4%;
-    --dark-light: 220 15% 8%;
-    --slate: 220 15% 20%;
-    --light: 210 20% 98%;
-    --light-muted: 210 15% 75%;
+    --gold: 42 78% 55%;
+    --gold-muted: 42 40% 35%;
+    --gold-glow: 42 80% 65%;
+    --charcoal: 220 20% 7%;
+    --charcoal-light: 220 18% 12%;
+    --slate: 220 15% 25%;
+    --ivory: 45 10% 95%;
+    --ivory-muted: 45 10% 70%;
+    
+    /* Diamond sparkle colors */
+    --diamond: 200 30% 90%;
+    --diamond-blue: 210 60% 80%;
+    --diamond-pink: 330 50% 85%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(195 85% 55%), hsl(195 70% 45%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 15% 4%), hsl(220 15% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(220 15% 8%), hsl(220 15% 5%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 15% 4%) 0%, hsl(220 15% 7%) 50%, hsl(220 15% 4%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 78% 55%), hsl(38 70% 45%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 7%), hsl(220 18% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 7%) 0%, hsl(220 18% 10%) 50%, hsl(220 20% 7%) 100%);
+    --gradient-diamond: linear-gradient(135deg, hsl(200 30% 90%), hsl(210 60% 80%), hsl(330 50% 85%), hsl(42 78% 55%));
 
     /* Shadows */
-    --shadow-primary: 0 4px 30px hsl(195 85% 55% / 0.2);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.5);
-    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.6);
+    --shadow-gold: 0 4px 30px hsl(42 78% 55% / 0.15);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.5);
+    --shadow-diamond: 0 0 20px hsl(200 30% 90% / 0.3);
 
     /* Typography */
     --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-    /* Sidebar */
-    --sidebar-background: 220 15% 7%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 195 85% 55%;
-    --sidebar-primary-foreground: 220 15% 4%;
-    --sidebar-accent: 220 15% 12%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 15% 15%;
-    --sidebar-ring: 195 85% 55%;
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 45 10% 85%;
+    --sidebar-primary: 42 78% 55%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 45 10% 85%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 42 78% 55%;
   }
 
   body {
@@ -89,19 +96,20 @@
 }
 
 @layer components {
-  .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(195 85% 55%), hsl(195 70% 45%));
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 78% 55%), hsl(38 70% 45%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Keep gold gradient for backwards compatibility but make it primary color */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(195 85% 55%), hsl(195 70% 45%));
+  .text-gradient-diamond {
+    background: linear-gradient(135deg, hsl(200 30% 95%), hsl(42 78% 55%), hsl(330 50% 85%), hsl(210 60% 85%));
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: diamond-shift 6s ease-in-out infinite;
   }
 
   .card-elevated {
@@ -120,31 +128,146 @@
   }
 
   .card-interactive:hover {
-    border-color: hsl(195 85% 55% / 0.3);
-    box-shadow: var(--shadow-primary);
+    border-color: hsl(42 78% 55% / 0.3);
+    box-shadow: var(--shadow-gold);
     transform: translateY(-2px);
   }
 
-  .btn-primary {
-    background: var(--gradient-primary);
+  .btn-gold {
+    background: var(--gradient-gold);
     color: hsl(var(--primary-foreground));
     font-weight: 600;
-    box-shadow: var(--shadow-primary);
+    box-shadow: var(--shadow-gold);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .btn-primary:hover {
-    box-shadow: 0 8px 40px hsl(195 85% 55% / 0.3);
+  .btn-gold:hover {
+    box-shadow: 0 8px 40px hsl(42 78% 55% / 0.3);
     transform: scale(1.02);
   }
 
   .glass {
-    background: hsl(220 15% 7% / 0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid hsl(220 15% 15% / 0.5);
+    background: hsl(220 18% 10% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(220 15% 20% / 0.5);
   }
 
   .font-display {
     font-family: var(--font-display);
+  }
+
+  /* Diamond sparkle effects */
+  .diamond-sparkle {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diamond-sparkle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      hsl(200 30% 90% / 0.1) 10deg,
+      transparent 20deg,
+      hsl(42 78% 55% / 0.1) 30deg,
+      transparent 40deg,
+      hsl(330 50% 85% / 0.1) 50deg,
+      transparent 60deg
+    );
+    animation: sparkle-rotate 20s linear infinite;
+  }
+
+  .sparkle-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, hsl(42 78% 75%) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkle-twinkle 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .diamond-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diamond-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(200 30% 95% / 0.2),
+      hsl(42 78% 65% / 0.3),
+      hsl(200 30% 95% / 0.2),
+      transparent
+    );
+    transform: skewX(-25deg);
+    animation: diamond-shine 4s ease-in-out infinite;
+  }
+
+  .floating-diamond {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(42 78% 55% / 0.3), 0 0 40px hsl(42 78% 55% / 0.1);
+  }
+
+  .glow-diamond {
+    box-shadow: 
+      0 0 10px hsl(200 30% 90% / 0.3),
+      0 0 20px hsl(42 78% 55% / 0.2),
+      0 0 30px hsl(330 50% 85% / 0.1);
+  }
+}
+
+@layer utilities {
+  @keyframes sparkle-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes diamond-shine {
+    0% { left: -100%; }
+    50%, 100% { left: 150%; }
+  }
+
+  @keyframes diamond-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(42 78% 55% / 0.2), 0 0 40px hsl(42 78% 55% / 0.1);
+    }
+    50% { 
+      box-shadow: 0 0 30px hsl(42 78% 55% / 0.4), 0 0 60px hsl(42 78% 55% / 0.2);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 }

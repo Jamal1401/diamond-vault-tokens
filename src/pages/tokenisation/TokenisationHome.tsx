@@ -42,6 +42,23 @@ const TokenisationHome = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--primary)/0.08),_transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--primary)/0.05),_transparent_50%)]" />
         
+        {/* Diamond sparkle overlay */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating sparkle dots */}
+          <div className="absolute top-[15%] left-[10%] w-1 h-1 bg-diamond rounded-full animate-sparkle" style={{ animationDelay: '0s' }} />
+          <div className="absolute top-[25%] right-[15%] w-1.5 h-1.5 bg-primary/60 rounded-full animate-sparkle" style={{ animationDelay: '0.5s' }} />
+          <div className="absolute top-[40%] left-[20%] w-1 h-1 bg-diamond-blue rounded-full animate-sparkle" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-[60%] right-[25%] w-1 h-1 bg-diamond-pink rounded-full animate-sparkle" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-[75%] left-[15%] w-1.5 h-1.5 bg-primary/50 rounded-full animate-sparkle" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-[30%] right-[40%] w-1 h-1 bg-diamond rounded-full animate-sparkle" style={{ animationDelay: '0.7s' }} />
+          <div className="absolute top-[55%] left-[35%] w-1 h-1 bg-diamond-blue rounded-full animate-sparkle" style={{ animationDelay: '1.2s' }} />
+          <div className="absolute top-[85%] right-[10%] w-1 h-1 bg-primary/40 rounded-full animate-sparkle" style={{ animationDelay: '0.3s' }} />
+          
+          {/* Subtle diamond refraction effect */}
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-diamond/5 via-transparent to-primary/5 rounded-full blur-3xl animate-glow" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-primary/5 via-transparent to-diamond-pink/5 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1.5s' }} />
+        </div>
+        
         {/* Subtle grid pattern */}
         <div 
           className="absolute inset-0 opacity-[0.02]"
@@ -90,7 +107,7 @@ const TokenisationHome = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-10">
+              <div className="relative bg-gradient-card rounded-3xl border border-border/50 p-8 md:p-10 diamond-shine animate-diamond-pulse">
                 {/* Top Row: Diamonds → Sale */}
                 <div className="flex items-center justify-center gap-4 mb-6">
                   {/* Diamonds */}

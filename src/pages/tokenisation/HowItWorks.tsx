@@ -18,6 +18,10 @@ import {
   ShieldCheck,
   FileText,
   Database,
+  Building,
+  CheckCircle2,
+  AlertCircle,
+  Flame,
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -76,7 +80,7 @@ const faqs = [
   },
   {
     question: "What technology underlies the tokens?",
-    answer: "Billiton utilizes institutional-grade blockchain infrastructure with enterprise security standards. Tokens are created on established networks with proven track records for security and regulatory compliance."
+    answer: "Billiton utilizes institutional-grade blockchain infrastructure with enterprise security standards. Tokens are issued as Asset-Referenced Virtual Assets (ARVAs) on established networks with proven track records for security and regulatory compliance."
   },
   {
     question: "Where are tokens held?",
@@ -84,7 +88,11 @@ const faqs = [
   },
   {
     question: "How does redemption work?",
-    answer: "Token holders can redeem for underlying diamonds (subject to minimum thresholds) or exit through secondary markets where available. Redemption processes and timelines are specified in offering documentation."
+    answer: "Token holders can redeem for underlying diamonds (subject to minimum thresholds) or exit through secondary markets where available. Upon redemption, the corresponding token is burned, removing it from circulation. Redemption processes and timelines are specified in offering documentation."
+  },
+  {
+    question: "Which tokenisation model is right for me?",
+    answer: "The Vault-Based Model offers maximum security and compliance assurance, ideal for those prioritising institutional-grade custody. The On-Premise Model provides flexibility for merchants wanting to tokenise from existing infrastructure while maintaining inventory control. Our team will help determine the best fit during the initial assessment."
   },
 ];
 
@@ -113,7 +121,7 @@ const HowItWorks = () => {
               <span className="text-gradient-gold">regulated tokens.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              A transparent, end-to-end process managed by Billiton.
+              A transparent, end-to-end process creating Asset-Referenced Virtual Assets (ARVAs) backed 1:1 by physical diamonds.
             </p>
             <Button variant="gold">
               <Download className="mr-2 w-5 h-5" />
@@ -159,6 +167,247 @@ const HowItWorks = () => {
         </div>
       </section>
 
+      {/* Two Tokenisation Models */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <SectionHeading
+            title="Two tokenisation models"
+            subtitle="Choose the approach that best fits your operational requirements and compliance preferences."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Model 1: Vault-Based */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-gradient-card border border-primary/30 relative overflow-hidden"
+            >
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium">
+                  Recommended
+                </span>
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Vault className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-medium text-foreground">
+                    Model 1: Vault-Based
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Centralised Custody</p>
+                </div>
+              </div>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Tokenisation occurs only when diamonds are held within a predefined and verified vault. 
+                The vault serves as the central point of custody, verification, and proof of reserve.
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                    <Database className="w-4 h-4 text-primary" />
+                    Key Process
+                  </h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Transfer diamonds to approved vaulting facility",
+                      "Physical verification and inventory system entry",
+                      "Token minting upon successful verification",
+                      "Trade or redeem via the platform",
+                      "Token burning upon physical redemption"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                    Advantages
+                  </h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Every token backed by a verified diamond",
+                      "Simplified proof-of-reserve and compliance",
+                      "Third-party custody enhances buyer confidence",
+                      "Reduced operational risk"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Model 2: On-Premise */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-gradient-card border border-border/50"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Building className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-medium text-foreground">
+                    Model 2: On-Premise
+                  </h3>
+                  <p className="text-sm text-muted-foreground">Merchant Custody</p>
+                </div>
+              </div>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Tokenisation while diamonds remain on the merchant's premises, integrated through 
+                API connection. Merchants can selectively tokenise portions of inventory.
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                    <Database className="w-4 h-4 text-primary" />
+                    Key Process
+                  </h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Select and mint ARVAs via inventory management system",
+                      "ARVAs created backed by merchant's verified records",
+                      "Daily reconciliation and inventory accuracy maintained",
+                      "Physical transfer to vault upon sale confirmation",
+                      "Token sent to buyer upon settlement"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                    Advantages
+                  </h4>
+                  <ul className="space-y-2">
+                    {[
+                      "Lower entry barrier for merchants",
+                      "Phased adoption with partial inventory",
+                      "Reduced logistical burden initially",
+                      "Faster marketplace participation"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* ARVA Explanation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto mt-12 p-6 rounded-xl bg-primary/5 border border-primary/20"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Coins className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-2">What is an ARVA?</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Asset-Referenced Virtual Assets (ARVAs) are digital tokens that represent ownership of physical diamonds. 
+                  Each ARVA is backed 1:1 by a certified, vaulted diamond, ensuring traceability and transparency on the blockchain ledger. 
+                  ARVAs can be bought, sold, or redeemed for their physical counterparts.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Token Lifecycle */}
+      <section className="py-20 md:py-28 bg-card/50">
+        <div className="container">
+          <SectionHeading
+            title="Token lifecycle"
+            subtitle="From minting to burning, every stage is tracked and verifiable."
+          />
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gradient-card border border-border/50 text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                <Coins className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="font-display text-lg font-medium text-foreground mb-2">Minting</h3>
+              <p className="text-sm text-muted-foreground">
+                Token created when diamond is verified and enters the custody system. 
+                Supply directly linked to physical inventory.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gradient-card border border-border/50 text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <RefreshCcw className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-lg font-medium text-foreground mb-2">Trading</h3>
+              <p className="text-sm text-muted-foreground">
+                Tokens can be traded on the marketplace. Ownership transfers are recorded immutably 
+                on the blockchain.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gradient-card border border-border/50 text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
+                <Flame className="w-8 h-8 text-orange-500" />
+              </div>
+              <h3 className="font-display text-lg font-medium text-foreground mb-2">Burning</h3>
+              <p className="text-sm text-muted-foreground">
+                Token permanently destroyed upon physical redemption or sale outside the ecosystem. 
+                Ensures 1:1 backing integrity.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Phase 1: Asset Intake */}
       <section className="py-20 md:py-28">
         <div className="container">
@@ -184,7 +433,8 @@ const HowItWorks = () => {
               items={[
                 "Selection of eligible diamonds or parcels based on quality and market criteria",
                 "Verification of GIA, HRD, or other recognized certificates",
-                "Provenance checks and ownership chain documentation"
+                "Provenance checks and ownership chain documentation",
+                "Inventory data entered into management system"
               ]}
               index={0}
             />
@@ -226,9 +476,9 @@ const HowItWorks = () => {
                 icon={ShieldCheck}
                 title="Regulatory Analysis"
                 items={[
-                  "Jurisdictional requirements",
+                  "VARA compliance framework",
                   "Investor categorisation",
-                  "Compliance framework setup"
+                  "KYC/AML requirements"
                 ]}
                 index={1}
               />
@@ -278,13 +528,12 @@ const HowItWorks = () => {
                   <Database className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-medium text-foreground">
-                  Digital Asset Creation
+                  ARVA Creation
                 </h3>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokens are created on institutional-grade blockchain infrastructure using established 
-                token standards. Each token maps 1:1 (or pro-rata) to diamonds or holding vehicles, 
-                with supply controls linking inventory and tokens.
+                Asset-Referenced Virtual Assets are created on institutional-grade blockchain infrastructure. 
+                Each token maps 1:1 to verified diamonds, with supply controls ensuring complete backing at all times.
               </p>
               <ul className="grid sm:grid-cols-2 gap-4">
                 {[
@@ -328,7 +577,7 @@ const HowItWorks = () => {
                 icon={Users}
                 title="Primary Distribution"
                 items={[
-                  "Private placement to qualified investors",
+                  "Marketplace listing and visibility",
                   "Platform allocation and subscription",
                   "Distribution partner network access"
                 ]}
@@ -340,7 +589,7 @@ const HowItWorks = () => {
                 items={[
                   "NAV calculation and reporting",
                   "Corporate actions management",
-                  "Buyback and redemption facilities"
+                  "Physical redemption and token burning"
                 ]}
                 index={1}
               />
@@ -350,7 +599,7 @@ const HowItWorks = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 md:py-28 bg-card/50">
+      <section className="py-20 md:py-28">
         <div className="container">
           <SectionHeading
             title="Process FAQs"

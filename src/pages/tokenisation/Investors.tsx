@@ -79,13 +79,13 @@ const benefits = [
 const investmentTypes = [
   {
     icon: Gem,
-    title: "Single-stone or parcel tokens",
-    description: "Direct exposure to specific certified diamonds or curated stone parcels."
+    title: "Single-stone or parcel ARVAs",
+    description: "Direct exposure to specific certified diamonds or curated stone parcels via Asset-Referenced Virtual Assets."
   },
   {
     icon: PieChart,
     title: "Diamond pools / funds",
-    description: "Diversified exposure across a managed portfolio of diamonds."
+    description: "Diversified exposure across a managed portfolio of tokenised diamonds."
   },
   {
     icon: FileStack,
@@ -98,7 +98,7 @@ const journeySteps = [
   { icon: ClipboardCheck, title: "Register & KYC" },
   { icon: FileText, title: "Review offerings" },
   { icon: CreditCard, title: "Subscribe" },
-  { icon: Wallet, title: "Receive tokens" },
+  { icon: Wallet, title: "Receive ARVAs" },
   { icon: LineChart, title: "Monitor & exit" },
 ];
 
@@ -183,7 +183,7 @@ const Investors = () => {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               For professional, qualified and institutional investors seeking 
-              exposure to diamonds through regulated digital asset structures.
+              exposure to diamonds through Asset-Referenced Virtual Assets (ARVAs).
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero">
@@ -245,7 +245,7 @@ const Investors = () => {
         <div className="container">
           <SectionHeading
             title="What you can invest in"
-            subtitle="Billiton offers a range of tokenised diamond products tailored to different investor needs."
+            subtitle="Billiton offers a range of ARVA products tailored to different investor needs."
           />
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">

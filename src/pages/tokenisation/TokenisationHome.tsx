@@ -328,27 +328,33 @@ const TokenisationHome = () => {
       <section className="py-24 md:py-32 bg-card/50">
         <div className="container">
           <SectionHeading
-            title="What you can do with tokenised diamonds"
+            title="What you can do with tokenised diamonds?"
           />
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <FeatureCard
-              icon={Package}
-              title="Tokenise vault inventory"
-              description="Convert stored diamonds into digital tokens, unlocking capital while maintaining ownership optionality."
+              icon={BarChart3}
+              title="Institutional-grade trading and portfolio allocation"
+              description="Trade diamonds as standardised, audited tokens on regulated or permissioned venues, giving professional investors transparent pricing, real-time settlement, and diversification into an uncorrelated hard asset."
               index={0}
             />
             <FeatureCard
-              icon={PieChart}
-              title="Launch investment products"
-              description="Create diamond-backed funds, structured notes, or portfolio products for distribution to qualified investors."
+              icon={Vault}
+              title="Collateral and on-chain credit"
+              description="Use tokenised diamonds as collateral in CeFi or DeFi lending pools, unlocking credit lines while underlying stones remain in secure custody and fully traceable on chain."
               index={1}
             />
             <FeatureCard
-              icon={Gem}
-              title="Fractional access"
-              description="Offer fractional ownership of high-value stones or curated parcels to a broader investor base."
+              icon={PieChart}
+              title="Fractional ownership and access products"
+              description="Fractionalise high-value stones into smaller units, enabling family offices, wealth platforms, and even retail investors to access diamond exposure without needing to buy or store entire stones."
               index={2}
+            />
+            <FeatureCard
+              icon={Gem}
+              title="Luxury utility, redemption and branding"
+              description="Link tokens to redeemable physical diamonds and jewellery, enabling luxury gifting, loyalty programs, and brand experiences where authenticated stones can move seamlessly between vault, wallet, and showroom."
+              index={3}
             />
           </div>
         </div>

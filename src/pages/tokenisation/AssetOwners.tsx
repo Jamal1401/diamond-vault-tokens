@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FeatureCard } from "@/components/tokenisation/FeatureCard";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
+import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
 import {
   ArrowRight,
   LockKeyhole,
@@ -187,9 +188,11 @@ const AssetOwners = () => {
                 Request Assessment
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="hero-outline">
-                Schedule Onboarding Call
-              </Button>
+              <ConsultationDialog>
+                <Button variant="hero-outline">
+                  Schedule Onboarding Call
+                </Button>
+              </ConsultationDialog>
             </div>
           </motion.div>
         </div>

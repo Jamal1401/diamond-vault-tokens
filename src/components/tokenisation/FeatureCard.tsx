@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -15,28 +14,31 @@ export const FeatureCard = ({
   title, 
   description, 
   className,
-  index = 0 
 }: FeatureCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
+    <div
       className={cn(
-        "group relative p-6 md:p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-gold",
+        "group relative p-6 md:p-8 rounded-2xl bg-card border border-border/60 hover:border-primary/40 transition-colors duration-200",
         className
       )}
     >
-      <div className="mb-4 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-        <Icon className="w-6 h-6 text-primary" />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+      
+      <div className="relative">
+        {/* Icon container with refined styling */}
+        <div className="mb-5 w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+          <Icon className="w-7 h-7 text-primary" />
+        </div>
+        
+        <h3 className="font-display text-lg md:text-xl font-semibold text-foreground mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+          {description}
+        </p>
       </div>
-      <h3 className="font-display text-xl font-medium text-foreground mb-2">
-        {title}
-      </h3>
-      <p className="text-muted-foreground leading-relaxed">
-        {description}
-      </p>
-    </motion.div>
+    </div>
   );
 };

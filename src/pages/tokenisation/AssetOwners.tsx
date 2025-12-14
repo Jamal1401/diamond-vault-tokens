@@ -109,16 +109,19 @@ const useCases = [
     icon: Building2,
     title: "Manufacturers",
     description: "Convert certified inventory into liquid digital assets, enabling working capital access without full divestment while maintaining exposure to price appreciation.",
+    hasRwaBadge: false,
   },
   {
     icon: Briefcase,
     title: "Traders",
     description: "Tokenise stock for faster settlement, reduced counterparty risk, and access to a global base of qualified buyers through regulated digital infrastructure.",
+    hasRwaBadge: false,
   },
   {
     icon: Users,
     title: "Institutional Investors",
     description: "Gain transparent, fractional exposure to certified diamonds as an uncorrelated asset class with on-chain provenance and regulated custody.",
+    hasRwaBadge: true,
   },
 ];
 
@@ -375,13 +378,21 @@ const AssetOwners = () => {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {useCases.map((useCase, i) => (
-              <FeatureCard
-                key={useCase.title}
-                icon={useCase.icon}
-                title={useCase.title}
-                description={useCase.description}
-                index={i}
-              />
+              <div key={useCase.title} className="relative">
+                {useCase.hasRwaBadge && (
+                  <div className="absolute -top-2 -right-2 z-10">
+                    <span className="px-2 py-1 text-[10px] font-bold rounded bg-primary text-primary-foreground shadow-md">
+                      RWA
+                    </span>
+                  </div>
+                )}
+                <FeatureCard
+                  icon={useCase.icon}
+                  title={useCase.title}
+                  description={useCase.description}
+                  index={i}
+                />
+              </div>
             ))}
           </div>
         </div>

@@ -106,19 +106,19 @@ const ongoingServices = [
 
 const useCases = [
   {
-    icon: Users,
-    title: "Generational Family Holdings",
-    description: "Access partial liquidity from inherited collections while preserving family legacy and upside exposure.",
-  },
-  {
     icon: Building2,
-    title: "High-Net-Worth & Family Offices",
-    description: "Optimise portfolio allocation by unlocking capital from concentrated diamond holdings.",
+    title: "Manufacturers",
+    description: "Convert certified inventory into liquid digital assets, enabling working capital access without full divestment while maintaining exposure to price appreciation.",
   },
   {
     icon: Briefcase,
-    title: "Corporate Treasuries & Traders",
-    description: "Monetise inventory without full divestment, maintaining exposure to price appreciation.",
+    title: "Traders",
+    description: "Tokenise stock for faster settlement, reduced counterparty risk, and access to a global base of qualified buyers through regulated digital infrastructure.",
+  },
+  {
+    icon: Users,
+    title: "Institutional Investors",
+    description: "Gain transparent, fractional exposure to certified diamonds as an uncorrelated asset class with on-chain provenance and regulated custody.",
   },
 ];
 

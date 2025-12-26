@@ -275,25 +275,38 @@ const AssetOwners = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Billiton's platform tokenises vault-held, certified diamonds and gemstones into regulated digital assets, enabling partial liquidity without requiring full divestment.
+                Billiton's platform tokenises <span className="text-foreground font-medium">authenticated, custody-held diamonds and gemstones</span> into <span className="text-foreground font-medium">compliant digital assets</span> that can be bought, sold, and redeemed through a <span className="text-foreground font-medium">regulated marketplace</span>.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our institutional-grade infrastructure provides transparent pricing, fractional ownership capabilities, and access to a broader base of qualified professional investors.
+                Our <span className="text-foreground font-medium">institutional-grade infrastructure</span> connects merchants to a rapidly expanding <span className="text-foreground font-medium">Web3 and real-world asset (RWA) ecosystem</span>, where tokenised luxury assets like diamonds are a natural fit for on-chain portfolios.
               </p>
 
               <ul className="space-y-4 pt-4">
-                {[
-                  "Partial liquidity events on your timeline, not the market's",
-                  "Transparent, market-based pricing through regulated digital assets",
-                  "Access to institutional and professional investors globally",
-                  "Retain exposure to price appreciation while accessing capital",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Liquidity events on your timeline</span> through primary issuance and secondary trading of tokenised stones, without disrupting existing vault or on-premise custody arrangements.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Transparent, market-driven price discovery</span> for each certified stone via a digital listing, bidding, and settlement environment.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Access to a global pool</span> of professional, crypto-native, and RWA-focused investors as capital increasingly moves into tokenised real-world assets.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Continue holding the underlying diamonds</span> in secure, audited custody while participating in the future of RWAs on-chain through tradeable, redeemable digital tokens.
+                  </span>
+                </li>
               </ul>
             </motion.div>
 

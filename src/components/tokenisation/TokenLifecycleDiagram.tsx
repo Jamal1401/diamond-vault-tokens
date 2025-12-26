@@ -13,6 +13,9 @@ import {
   Truck,
   TrendingUp,
   Target,
+  BarChart3,
+  Layers,
+  Repeat,
 } from "lucide-react";
 
 interface FlowStepProps {
@@ -119,15 +122,17 @@ export const VaultBasedDiagram = () => {
           </div>
         </div>
 
-        {/* Redemption Flow */}
+        {/* Phase 3: Public Exchange Trading */}
         <div className="mt-8 pt-8 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Redemption Flow</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 3: Public Exchange Availability</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
-            <FlowStep icon={Users} label="Holder" sublabel="Requests Redemption" delay={0.85} />
+            <FlowStep icon={Diamond} label="ARVA Active" sublabel="Fully Backed" highlight delay={0.85} />
             <FlowArrow delay={0.9} />
-            <FlowStep icon={Flame} label="Token Burn" sublabel="ARVA Destroyed" highlight delay={0.95} />
+            <FlowStep icon={BarChart3} label="Public Exchanges" sublabel="Listed & Tradable" highlight delay={0.95} />
             <FlowArrow delay={1.0} />
-            <FlowStep icon={Diamond} label="Physical Delivery" sublabel="Diamond Released" delay={1.05} />
+            <FlowStep icon={Repeat} label="Trading" sublabel="Buy/Sell 24/7" delay={1.05} />
+            <FlowArrow delay={1.1} />
+            <FlowStep icon={Layers} label="DeFi & Staking" sublabel="Yield Opportunities" delay={1.15} />
           </div>
         </div>
       </div>
@@ -153,11 +158,13 @@ export const VaultBasedDiagram = () => {
           </div>
         </div>
         <div className="pt-4 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Redemption</p>
-          <div className="flex items-center justify-center gap-4">
-            <FlowStep icon={Flame} label="Burn" highlight delay={0.55} />
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 3: Exchange Trading</p>
+          <div className="flex items-center justify-between">
+            <FlowStep icon={BarChart3} label="Exchanges" sublabel="Listed" highlight delay={0.55} />
             <FlowArrow delay={0.6} />
-            <FlowStep icon={Diamond} label="Delivery" delay={0.65} />
+            <FlowStep icon={Repeat} label="Trade" sublabel="24/7" delay={0.65} />
+            <FlowArrow delay={0.7} />
+            <FlowStep icon={Layers} label="DeFi" sublabel="Staking" delay={0.75} />
           </div>
         </div>
       </div>

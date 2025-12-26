@@ -404,7 +404,7 @@ const TokenisationHome = () => {
                 },
                 {
                   question: "What tokenisation models are available?",
-                  answer: "We offer two models: Vault-Based Tokenisation where diamonds are transferred to approved custody before minting, and On-Premise Tokenisation where merchants can tokenise from their existing infrastructure with API integration."
+                  answer: "We offer two models: Subscription-based Tokenisation where tokenisation occurs without physical custody until 70% or more of tokens are subscribed, triggering transfer to an approved vault, and On-Premise Tokenisation where merchants can tokenise from their existing infrastructure with API integration."
                 },
               ]}
             />

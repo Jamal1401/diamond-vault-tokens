@@ -181,7 +181,7 @@ const HowItWorks = () => {
           />
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Model 1: Vault-Based */}
+            {/* Model 1: Subscription-based */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -412,7 +412,7 @@ const HowItWorks = () => {
             <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
               <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
                 <Vault className="w-5 h-5 text-primary" />
-                Vault-Based Key Point
+                Subscription-based Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Diamonds must be physically transferred to the vault <strong className="text-foreground">before</strong> tokenisation. 

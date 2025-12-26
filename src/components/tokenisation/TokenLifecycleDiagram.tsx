@@ -76,7 +76,7 @@ export const VaultBasedDiagram = () => {
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-medium text-foreground">
-            Vault-Based Model Flow
+            Subscription-based Model Flow
           </h3>
           <p className="text-sm text-muted-foreground">Centralised Custody</p>
         </div>

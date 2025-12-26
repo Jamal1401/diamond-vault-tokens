@@ -223,7 +223,8 @@ const HowItWorks = () => {
                       "List tokens on marketplace for subscription",
                       "At 70%+ subscription, transfer to approved vault",
                       "Vault provides proof of reserve and custody",
-                      "Token burning upon physical redemption"
+                      "Tokens listed on public exchanges for trading",
+                      "Available for staking, DeFi, and yield strategies"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -254,7 +255,9 @@ const HowItWorks = () => {
                       "Asset owner realises 70%+ value before vault transfer",
                       "Reduced operational burden during subscription phase",
                       "Vault custody only after proven market demand",
-                      "Full proof-of-reserve once threshold is met"
+                      "Full proof-of-reserve once threshold is met",
+                      "Tokens tradable on public exchanges 24/7",
+                      "Access to DeFi, staking, and yield opportunities"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -417,7 +420,7 @@ const HowItWorks = () => {
                 Subscription-based Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Tokenisation occurs <strong className="text-foreground">without physical custody</strong>. Only when <strong className="text-amber-500">70% or more</strong> of tokens are subscribed is the asset transferred to an approved vault—meaning the asset owner realises most of the value before custody transfer.
+                Tokenisation occurs <strong className="text-foreground">without physical custody</strong>. Only when <strong className="text-amber-500">70% or more</strong> of tokens are subscribed is the asset transferred to an approved vault. <strong className="text-foreground">No physical delivery</strong>—tokens are listed on public exchanges for trading, staking, and DeFi.
               </p>
             </div>
             <div className="p-6 rounded-xl bg-muted/50 border border-border/50">

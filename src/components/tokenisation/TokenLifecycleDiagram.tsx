@@ -165,7 +165,7 @@ export const VaultBasedDiagram = () => {
   );
 };
 
-export const OnPremiseDiagram = () => {
+export const DigitalTwinDiagram = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -176,73 +176,69 @@ export const OnPremiseDiagram = () => {
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-          <Building className="w-5 h-5 text-primary" />
+          <Diamond className="w-5 h-5 text-primary" />
         </div>
         <div>
           <h3 className="font-display text-lg md:text-xl font-medium text-foreground">
-            On-Premise Model Flow
+            Digital-Twin Model Flow
           </h3>
-          <p className="text-sm text-muted-foreground">Merchant Custody → ARVA on Sale</p>
+          <p className="text-sm text-muted-foreground">1:1 Token = Exact Certified Diamond</p>
         </div>
       </div>
 
       {/* Desktop Flow */}
       <div className="hidden md:block">
-        {/* Phase 1: Token Minting (No ARVA yet) */}
+        {/* Phase 1: Digital Twin Creation */}
         <div className="mb-4">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 1: Token Minting (Merchant Holds Inventory)</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 1: Digital Twin Creation (Token = Specific Diamond)</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
-            <FlowStep icon={Building} label="Merchant" sublabel="Holds Inventory" delay={0} />
+            <FlowStep icon={Diamond} label="Certified Diamond" sublabel="Unique Asset" delay={0} />
             <FlowArrow delay={0.1} />
-            <FlowStep icon={FileCheck} label="API Verify" sublabel="System Integration" delay={0.15} />
+            <FlowStep icon={FileCheck} label="Full Certification" sublabel="GIA/IGI Verified" delay={0.15} />
             <FlowArrow delay={0.2} />
-            <FlowStep icon={Coins} label="Mint Token" sublabel="Not ARVA Yet" highlight delay={0.25} />
+            <FlowStep icon={Coins} label="Mint Digital Twin" sublabel="1:1 Representation" highlight delay={0.25} />
             <FlowArrow delay={0.3} />
-            <FlowStep icon={Users} label="Marketplace" sublabel="List for Sale" delay={0.35} />
+            <FlowStep icon={Users} label="Marketplace" sublabel="Trade Digital Twin" delay={0.35} />
           </div>
         </div>
 
-        {/* Phase 2: Sale triggers ARVA Creation */}
+        {/* Phase 2: Physical Delivery Option */}
         <div className="mt-8 pt-8 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Sale Triggers ARVA Creation</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Optional Physical Delivery</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
-            <FlowStep icon={ShoppingCart} label="Sale" sublabel="Buyer Purchase" delay={0.4} />
+            <FlowStep icon={Users} label="Token Holder" sublabel="Elects Delivery" delay={0.4} />
             <FlowArrow delay={0.45} />
-            <FlowStep icon={Truck} label="Transfer" sublabel="To Custodian" delay={0.5} />
+            <FlowStep icon={Vault} label="Vault Release" sublabel="Diamond Retrieved" highlight delay={0.5} />
             <FlowArrow delay={0.55} />
-            <FlowStep icon={Vault} label="Custodian" sublabel="Receives Goods" highlight delay={0.6} />
+            <FlowStep icon={Flame} label="Token Burn" sublabel="Twin Destroyed" highlight delay={0.6} />
             <FlowArrow delay={0.65} />
-            <FlowStep icon={Diamond} label="ARVA Created" sublabel="Fully Backed" highlight delay={0.7} />
-            <FlowArrow delay={0.75} />
-            <FlowStep icon={Users} label="Buyer" sublabel="Receives ARVA" delay={0.8} />
+            <FlowStep icon={Diamond} label="Physical Diamond" sublabel="Delivered to Holder" delay={0.7} />
           </div>
         </div>
       </div>
 
       {/* Mobile Flow */}
       <div className="md:hidden space-y-4">
-        <p className="text-xs text-muted-foreground text-center uppercase tracking-wider">Phase 1: Token Minting</p>
+        <p className="text-xs text-muted-foreground text-center uppercase tracking-wider">Phase 1: Digital Twin</p>
         <div className="flex items-center justify-between">
-          <FlowStep icon={Building} label="Merchant" sublabel="Inventory" delay={0} />
+          <FlowStep icon={Diamond} label="Diamond" sublabel="Certified" delay={0} />
           <FlowArrow delay={0.1} />
-          <FlowStep icon={FileCheck} label="API" sublabel="Verify" delay={0.15} />
+          <FlowStep icon={FileCheck} label="Verify" sublabel="GIA/IGI" delay={0.15} />
           <FlowArrow delay={0.2} />
-          <FlowStep icon={Coins} label="Token" sublabel="Not ARVA" highlight delay={0.25} />
+          <FlowStep icon={Coins} label="Twin" sublabel="1:1 Token" highlight delay={0.25} />
         </div>
         <div className="flex justify-center">
           <FlowArrow direction="down" delay={0.3} />
         </div>
         <div className="flex items-center justify-center">
-          <FlowStep icon={Users} label="Marketplace" sublabel="List for Sale" delay={0.35} />
+          <FlowStep icon={Users} label="Marketplace" sublabel="Trade" delay={0.35} />
         </div>
         <div className="pt-6 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Sale → ARVA</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: Physical Delivery</p>
           <div className="flex items-center justify-between">
-            <FlowStep icon={ShoppingCart} label="Sale" delay={0.4} />
+            <FlowStep icon={Flame} label="Burn" highlight delay={0.4} />
             <FlowArrow delay={0.45} />
-            <FlowStep icon={Vault} label="Custodian" highlight delay={0.5} />
-            <FlowArrow delay={0.55} />
-            <FlowStep icon={Diamond} label="ARVA" sublabel="Created" highlight delay={0.6} />
+            <FlowStep icon={Diamond} label="Delivery" sublabel="Physical" delay={0.5} />
           </div>
         </div>
       </div>

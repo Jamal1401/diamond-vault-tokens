@@ -5,7 +5,7 @@ import { FAQAccordion } from "@/components/tokenisation/FAQAccordion";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
-import { VaultBasedDiagram, OnPremiseDiagram } from "@/components/tokenisation/TokenLifecycleDiagram";
+import { VaultBasedDiagram, DigitalTwinDiagram } from "@/components/tokenisation/TokenLifecycleDiagram";
 import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
@@ -266,7 +266,7 @@ const HowItWorks = () => {
               </div>
             </motion.div>
 
-            {/* Model 2: On-Premise */}
+            {/* Model 2: Digital-Twin */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -276,19 +276,19 @@ const HowItWorks = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Building className="w-7 h-7 text-primary" />
+                  <Diamond className="w-7 h-7 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-medium text-foreground">
-                    Model 2: On-Premise
+                    Model 2: Digital-Twin
                   </h3>
-                  <p className="text-sm text-muted-foreground">Merchant Custody</p>
+                  <p className="text-sm text-muted-foreground">1:1 Token Representation</p>
                 </div>
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokens are minted while diamonds remain on the merchant's premises, integrated through 
-                API connection. However, ARVAs are only created upon sale when goods are transferred to the custodian.
+                Each token represents the exact same certified diamond—a precise digital twin of a specific physical asset. 
+                The holder can elect to receive the physical diamond in place of the digital representation at any time.
               </p>
 
               <div className="space-y-6">
@@ -299,11 +299,11 @@ const HowItWorks = () => {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      "Mint tokens via inventory management system",
-                      "Daily reconciliation and inventory accuracy maintained",
-                      "Upon sale, diamonds transfer to custodian vault",
-                      "ARVA created once goods are with the custodian",
-                      "ARVA sent to buyer upon settlement"
+                      "Certify specific diamond with full GIA/IGI documentation",
+                      "Mint digital twin token representing exact asset",
+                      "Token trades as 1:1 representation of physical diamond",
+                      "Holder can elect physical delivery at any time",
+                      "Upon delivery, token is burned—one asset, one token"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -320,10 +320,10 @@ const HowItWorks = () => {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      "Lower entry barrier for merchants",
-                      "Phased adoption with partial inventory",
-                      "Reduced logistical burden initially",
-                      "Faster marketplace participation"
+                      "Perfect traceability—token links to exact stone",
+                      "Holder can claim physical diamond at any time",
+                      "Ideal for high-value, unique diamonds",
+                      "Full provenance and certification on-chain"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -380,7 +380,7 @@ const HowItWorks = () => {
                 <div>
                   <h5 className="font-medium text-foreground text-sm mb-1">Token</h5>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    A digital representation minted on the blockchain. In the On-Premise model, tokens can exist before the physical asset is with the custodian.
+                    A digital representation minted on the blockchain. In the Digital-Twin model, the token represents an exact 1:1 copy of a specific certified diamond.
                   </p>
                 </div>
               </div>
@@ -400,7 +400,7 @@ const HowItWorks = () => {
 
           <div className="space-y-8 max-w-6xl mx-auto">
             <VaultBasedDiagram />
-            <OnPremiseDiagram />
+            <DigitalTwinDiagram />
           </div>
 
           {/* Key Differences Callout */}
@@ -422,12 +422,12 @@ const HowItWorks = () => {
             </div>
             <div className="p-6 rounded-xl bg-muted/50 border border-border/50">
               <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
-                <Building className="w-5 h-5 text-primary" />
-                On-Premise Key Point
+                <Diamond className="w-5 h-5 text-primary" />
+                Digital-Twin Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Tokens are minted <strong className="text-foreground">while diamonds remain with the merchant</strong>, but 
-                ARVAs are only created <strong className="text-foreground">upon sale</strong> when goods are transferred to the custodian.
+                Each token is a <strong className="text-foreground">precise digital twin</strong> of a specific certified diamond. 
+                The holder can <strong className="text-foreground">elect physical delivery</strong> at any time, receiving the exact stone their token represents.
               </p>
             </div>
           </motion.div>

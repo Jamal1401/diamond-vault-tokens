@@ -186,7 +186,7 @@ const AssetOwners = () => {
               <span className="text-gradient-gold">diamond holdings.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Access capital from your certified diamonds and gemstones without fully selling—through regulated digital asset tokenisation.
+              Tokenising your diamond inventory into compliant, vault-backed digital assets, we unlock liquidity: you can access global buyers, faster settlement, and flexible ownership options while your gems stay securely stored.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero">

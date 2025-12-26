@@ -8,6 +8,7 @@ import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
 import { Link } from "react-router-dom";
+import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
   ArrowDown,
@@ -30,6 +31,7 @@ import {
 } from "lucide-react";
 
 const TokenisationHome = () => {
+  useScrollToNextPage();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

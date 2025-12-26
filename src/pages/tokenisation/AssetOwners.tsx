@@ -8,6 +8,7 @@ import { FeatureCard } from "@/components/tokenisation/FeatureCard";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
+import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
   LockKeyhole,
@@ -134,6 +135,7 @@ const onboardingRequirements = [
 ];
 
 const AssetOwners = () => {
+  useScrollToNextPage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",

@@ -6,6 +6,7 @@ import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
 import { VaultBasedDiagram, OnPremiseDiagram } from "@/components/tokenisation/TokenLifecycleDiagram";
+import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
   Diamond,
@@ -98,6 +99,7 @@ const faqs = [
 ];
 
 const HowItWorks = () => {
+  useScrollToNextPage();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

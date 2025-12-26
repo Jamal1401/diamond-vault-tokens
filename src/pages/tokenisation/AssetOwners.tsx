@@ -11,10 +11,11 @@ import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog
 import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
-  LockKeyhole,
-  TrendingDown,
-  Eye,
-  Clock,
+  Gem,
+  Globe2,
+  ShieldCheck,
+  Zap,
+  Scale,
   FileCheck,
   Shield,
   Vault,
@@ -33,24 +34,29 @@ import { useToast } from "@/hooks/use-toast";
 
 const challenges = [
   {
-    icon: LockKeyhole,
-    text: "Illiquid generational holdings with no clear exit path",
+    icon: Gem,
+    title: "Illiquid inventory",
+    text: "Physical diamonds sitting in vaults or showrooms cannot be easily traded or financed, tokenisation converts them into instantly tradeable, globally accessible digital assets.",
   },
   {
-    icon: TrendingDown,
-    text: "Difficulty executing partial exits without selling entire collections",
+    icon: Globe2,
+    title: "Limited buyer reach",
+    text: "Traditional auctions and B2B sales restrict access to local or niche buyers, the Web3 marketplace opens holdings to global RWA and crypto-native investors 24/7.",
   },
   {
-    icon: Eye,
-    text: "Concentration risk in physical stones with limited diversification options",
+    icon: ShieldCheck,
+    title: "Trust and authenticity concerns",
+    text: "Buyers struggle to verify provenance, grading and custody, each token is linked to certified stones in regulated, audited custody with immutable ownership records.",
   },
   {
-    icon: Clock,
-    text: "Slow, opaque sale processes with unpredictable timelines",
+    icon: Zap,
+    title: "Operational and settlement friction",
+    text: "Cross-border payments, invoicing, and delivery create delays and cost, on-chain settlement, stablecoin/fiat options, and token-based redemption streamline the full transaction lifecycle.",
   },
   {
-    icon: Users,
-    text: "Narrow buyer universe limiting competitive pricing",
+    icon: Scale,
+    title: "Regulatory and compliance complexity",
+    text: "Navigating VARA/DMCC rules, proof-of-reserve, and audits is difficult for merchants alone, the platform embeds compliant issuance, custody, and reporting frameworks into a single infrastructure.",
   },
 ];
 
@@ -210,30 +216,44 @@ const AssetOwners = () => {
             title="Challenges we solve"
           />
 
-          <div className="max-w-3xl mx-auto">
-            <motion.ul
+          <div className="max-w-4xl mx-auto">
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-5"
             >
               {challenges.map((challenge, i) => (
-                <motion.li
+                <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-gradient-card border border-border/50"
+                  className="group relative p-6 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/40 transition-all duration-300"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-destructive/10 flex-shrink-0">
-                    <challenge.icon className="w-5 h-5 text-destructive" />
+                  <div className="flex items-start gap-5">
+                    {/* Icon with gradient ring effect */}
+                    <div className="relative flex-shrink-0">
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border border-primary/20 group-hover:border-primary/40 transition-colors duration-300">
+                        <challenge.icon className="w-7 h-7 text-primary" />
+                      </div>
+                    </div>
+                    
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                        {challenge.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {challenge.text}
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-foreground">{challenge.text}</span>
-                </motion.li>
+                </motion.div>
               ))}
-            </motion.ul>
+            </motion.div>
           </div>
         </div>
       </section>

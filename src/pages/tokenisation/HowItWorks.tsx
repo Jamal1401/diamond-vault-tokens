@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     question: "What are the costs involved?",
-    answer: "Costs include structuring and legal fees, vaulting and insurance, technology and platform fees, and ongoing administration. We provide detailed fee estimates during the initial assessment phase."
+    answer: "There are no onboarding fees for Billiton Diamond clients or their affiliated entities. In Phase Two, a minimal one-time integration fee in the range of approximately USD 1,000–3,000 may apply for developing APIs to support live inventory connectivity. A 2% commission is charged on the value of each completed sale executed through the platform."
   },
   {
     question: "What technology underlies the tokens?",

@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     question: "Where are tokens held?",
-    answer: "Investors can hold tokens in Billiton's platform custody solution or transfer to designated external wallet solutions. Custody arrangements are designed with institutional security standards."
+    answer: "Tokens represent Real-World Assets (RWAs) and are always fully backed by physical diamonds. For every diamond token issued, whether it represents a fractional interest or a precise digital twin, there is a corresponding certified diamond held in secure custody, ensuring the token remains 100% always asset-backed. The digital token itself may be held and traded on the tokenisation platform or, subject to listing and regulatory approvals, on recognised public exchanges such as major global virtual asset venues."
   },
   {
     question: "How does redemption work?",

@@ -175,7 +175,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Animated Branch Connector */}
-          <div className="relative max-w-5xl mx-auto h-20 md:h-24">
+          <div className="relative max-w-5xl mx-auto h-20 md:h-24 overflow-visible">
             {/* Center vertical line */}
             <motion.div
               initial={{ scaleY: 0 }}
@@ -183,6 +183,22 @@ const HowItWorks = () => {
               transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: true }}
               className="absolute left-1/2 top-0 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary to-primary/50 origin-top"
+            />
+            
+            {/* Particle flowing down center */}
+            <motion.div
+              initial={{ top: 0, opacity: 0 }}
+              animate={{ 
+                top: ["0%", "40%"],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1.5,
+                repeat: Infinity,
+                repeatDelay: 0.5,
+                ease: "easeInOut"
+              }}
+              className="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(var(--primary)/0.6)]"
             />
             
             {/* Horizontal connector */}
@@ -194,6 +210,40 @@ const HowItWorks = () => {
               className="absolute left-1/4 right-1/4 top-8 md:top-10 h-0.5 bg-gradient-to-r from-primary/50 via-primary to-primary/50"
             />
             
+            {/* Particle flowing left on horizontal */}
+            <motion.div
+              initial={{ left: "50%", opacity: 0 }}
+              animate={{ 
+                left: ["50%", "25%"],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1.2,
+                repeat: Infinity,
+                repeatDelay: 1,
+                delay: 1.5,
+                ease: "easeOut"
+              }}
+              className="absolute top-8 md:top-10 -translate-y-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(var(--primary)/0.6)]"
+            />
+            
+            {/* Particle flowing right on horizontal */}
+            <motion.div
+              initial={{ right: "50%", opacity: 0 }}
+              animate={{ 
+                right: ["50%", "25%"],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1.2,
+                repeat: Infinity,
+                repeatDelay: 1,
+                delay: 1.5,
+                ease: "easeOut"
+              }}
+              className="absolute top-8 md:top-10 -translate-y-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(var(--primary)/0.6)]"
+            />
+            
             {/* Left branch down */}
             <motion.div
               initial={{ scaleY: 0 }}
@@ -203,6 +253,22 @@ const HowItWorks = () => {
               className="absolute left-1/4 top-8 md:top-10 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary/50 to-primary origin-top"
             />
             
+            {/* Particle flowing down left branch */}
+            <motion.div
+              animate={{ 
+                top: ["40%", "100%"],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 1.5,
+                delay: 2.7,
+                ease: "easeIn"
+              }}
+              className="absolute left-1/4 -translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(var(--primary)/0.6)]"
+            />
+            
             {/* Right branch down */}
             <motion.div
               initial={{ scaleY: 0 }}
@@ -210,6 +276,22 @@ const HowItWorks = () => {
               transition={{ duration: 0.3, delay: 0.7 }}
               viewport={{ once: true }}
               className="absolute right-1/4 top-8 md:top-10 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary/50 to-primary origin-top"
+            />
+            
+            {/* Particle flowing down right branch */}
+            <motion.div
+              animate={{ 
+                top: ["40%", "100%"],
+                opacity: [0, 1, 1, 0]
+              }}
+              transition={{ 
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 1.5,
+                delay: 2.7,
+                ease: "easeIn"
+              }}
+              className="absolute right-1/4 translate-x-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_4px_hsl(var(--primary)/0.6)]"
             />
             
             {/* Left arrow indicator */}
@@ -238,10 +320,29 @@ const HowItWorks = () => {
               viewport={{ once: true }}
               className="absolute left-1/2 top-8 md:top-10 -translate-x-1/2 -translate-y-1/2"
             >
-              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <div className="w-5 h-5 rounded-full bg-primary/30 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_4px_hsl(var(--primary)/0.5)] animate-pulse" />
               </div>
+              {/* Ripple effect */}
+              <motion.div
+                animate={{ 
+                  scale: [1, 2.5],
+                  opacity: [0.5, 0]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeOut"
+                }}
+                className="absolute inset-0 rounded-full border border-primary"
+              />
             </motion.div>
+            
+            {/* Glow effect on lines */}
+            <div className="absolute left-1/2 top-0 w-1 h-8 md:h-10 bg-primary/20 blur-sm -translate-x-1/2" />
+            <div className="absolute left-1/4 right-1/4 top-8 md:top-10 h-1 bg-primary/20 blur-sm -translate-y-1/2" />
+            <div className="absolute left-1/4 top-8 md:top-10 w-1 h-8 md:h-10 bg-primary/20 blur-sm -translate-x-1/2" />
+            <div className="absolute right-1/4 top-8 md:top-10 w-1 h-8 md:h-10 bg-primary/20 blur-sm translate-x-1/2" />
           </div>
 
           {/* Branching Paths */}

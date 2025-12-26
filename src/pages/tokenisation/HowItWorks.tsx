@@ -73,7 +73,7 @@ const processSteps = [
 const faqs = [
   {
     question: "How long does the tokenisation process take?",
-    answer: "Timelines vary based on structure complexity, diamond inventory size, and regulatory requirements. Typical projects range from 3-6 months from initial assessment to token issuance."
+    answer: "In Phase 1, the tokenisation process is based on Excel file upload and takes a maximum of 24 hours from file upload to tokenisation, depending on the volume of goods. In Phase 2, inventory systems will be integrated via APIs, allowing for instant tokenisation and real-time updates across platforms."
   },
   {
     question: "What are the costs involved?",

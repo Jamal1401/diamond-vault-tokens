@@ -404,7 +404,7 @@ const TokenisationHome = () => {
                 },
                 {
                   question: "What tokenisation models are available?",
-                  answer: "We offer two models: Subscription-based Tokenisation where tokenisation occurs without physical custody until 70% or more of tokens are subscribed, triggering transfer to an approved vault, and On-Premise Tokenisation where merchants can tokenise from their existing infrastructure with API integration."
+                  answer: "We offer two models: Subscription-based Tokenisation where tokenisation occurs without physical custody until 70% or more of tokens are subscribed, triggering transfer to an approved vault, and Digital-Twin Tokenisation where each token represents an exact 1:1 digital copy of a specific certified diamond, with the option to claim physical delivery at any time."
                 },
               ]}
             />

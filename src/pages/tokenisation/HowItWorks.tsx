@@ -200,15 +200,14 @@ const HowItWorks = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-medium text-foreground">
-                    Model 1: Vault-Based
+                    Model 1: Subscription-based
                   </h3>
                   <p className="text-sm text-muted-foreground">Centralised Custody</p>
                 </div>
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokenisation occurs only when diamonds are held within a predefined and verified vault. 
-                The vault serves as the central point of custody, verification, and proof of reserve.
+                Tokenisation occurs without the need for any physical custody. Only when 70% or more of the tokens are subscribed to is the asset taken into custody of a predefined and verified vault. The vault serves as the central point of custody, verification, and proof of reserve.
               </p>
 
               <div className="space-y-6">

@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     question: "What technology underlies the tokens?",
-    answer: "Billiton utilizes institutional-grade blockchain infrastructure with enterprise security standards. Tokens are issued as Asset-Referenced Virtual Assets (ARVAs) on established networks with proven track records for security and regulatory compliance."
+    answer: "Billiton's technology partner is one of the leading tokenisation platforms in the UAE, utilising institutional-grade blockchain infrastructure with enterprise security standards. Tokens are issued as Asset-Referenced Virtual Assets (ARVAs) on established networks with proven track records for security and regulatory compliance."
   },
   {
     question: "Where are tokens held?",

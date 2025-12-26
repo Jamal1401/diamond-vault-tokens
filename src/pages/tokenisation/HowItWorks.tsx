@@ -555,7 +555,8 @@ const HowItWorks = () => {
                 items={[
                   "Vehicle design (SPV, fund, trust)",
                   "Rights and obligations mapping",
-                  "Investor protection mechanisms"
+                  "Investor protection mechanisms",
+                  "Platform fully compliant with VARA rules for issuance, distribution & management of digital assets"
                 ]}
                 index={0}
               />

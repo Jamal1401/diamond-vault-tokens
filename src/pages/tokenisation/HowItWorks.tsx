@@ -233,6 +233,16 @@ const HowItWorks = () => {
 
                 <div>
                   <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-amber-500" />
+                    Key Point
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
+                    The asset is transferred to the vault when more than 70% of tokens are subscribed—meaning the asset owner has already realised most of the value before physical custody transfer.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-medium text-foreground mb-3 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-500" />
                     Advantages
                   </h4>

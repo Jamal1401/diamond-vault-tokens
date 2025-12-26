@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     question: "Which tokenisation model is right for me?",
-    answer: "The Vault-Based Model offers maximum security and compliance assurance, ideal for those prioritising institutional-grade custody. The On-Premise Model provides flexibility for merchants wanting to tokenise from existing infrastructure while maintaining inventory control. Our team will help determine the best fit during the initial assessment."
+    answer: "Both tokenisation models are designed to be highly flexible, serving the needs of both asset manufacturers and investors seeking investment-grade diamonds across a broad inventory spectrum. They enable investors, asset managers and brands to secure diamond allocations in their Web3 portfolios while retaining the option to call for physical delivery only when it is strategically required. At the same time, the models open access for Web3-native investors to gain fractional ownership of exceptional, timeless diamonds and gemstones, while giving merchants the ability to tokenise directly from their existing infrastructure and maintain full inventory control. During the initial assessment, our team will work with you to understand your objectives, operational setup and risk profile, and then recommend the model or combination of models that provides the best fit."
   },
 ];
 

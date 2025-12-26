@@ -10,6 +10,7 @@ import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
 import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
 import { Link } from "react-router-dom";
+import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
   Building2,
@@ -137,6 +138,7 @@ const risks = [
 ];
 
 const Investors = () => {
+  useScrollToNextPage();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     email: "",

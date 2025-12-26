@@ -553,10 +553,9 @@ const HowItWorks = () => {
                 icon={Scale}
                 title="Legal Entities"
                 items={[
-                  "Vehicle design (SPV, fund, trust)",
-                  "Rights and obligations mapping",
                   "Investor protection mechanisms",
-                  "Platform fully compliant with VARA rules for issuance, distribution & management of digital assets"
+                  "Platform fully compliant with VARA rules for issuance, distribution & management of digital assets",
+                  "All entities hold required licences to deal and trade in diamonds"
                 ]}
                 index={0}
               />

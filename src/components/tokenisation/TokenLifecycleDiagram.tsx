@@ -11,6 +11,8 @@ import {
   FileCheck,
   ShoppingCart,
   Truck,
+  TrendingUp,
+  Target,
 } from "lucide-react";
 
 interface FlowStepProps {
@@ -18,10 +20,11 @@ interface FlowStepProps {
   label: string;
   sublabel?: string;
   highlight?: boolean;
+  threshold?: boolean;
   delay?: number;
 }
 
-const FlowStep = ({ icon: Icon, label, sublabel, highlight, delay = 0 }: FlowStepProps) => (
+const FlowStep = ({ icon: Icon, label, sublabel, highlight, threshold, delay = 0 }: FlowStepProps) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
     whileInView={{ opacity: 1, scale: 1 }}
@@ -31,16 +34,18 @@ const FlowStep = ({ icon: Icon, label, sublabel, highlight, delay = 0 }: FlowSte
   >
     <div
       className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-3 ${
-        highlight
+        threshold
+          ? "bg-amber-500/20 border-2 border-amber-500"
+          : highlight
           ? "bg-primary/20 border-2 border-primary"
           : "bg-gradient-card border border-border/50"
       }`}
     >
-      <Icon className={`w-7 h-7 md:w-8 md:h-8 ${highlight ? "text-primary" : "text-muted-foreground"}`} />
+      <Icon className={`w-7 h-7 md:w-8 md:h-8 ${threshold ? "text-amber-500" : highlight ? "text-primary" : "text-muted-foreground"}`} />
     </div>
     <span className="text-sm md:text-base font-medium text-foreground max-w-[100px]">{label}</span>
     {sublabel && (
-      <span className="text-xs text-muted-foreground mt-1">{sublabel}</span>
+      <span className={`text-xs mt-1 ${threshold ? "text-amber-500 font-medium" : "text-muted-foreground"}`}>{sublabel}</span>
     )}
   </motion.div>
 );
@@ -78,60 +83,81 @@ export const VaultBasedDiagram = () => {
           <h3 className="font-display text-lg md:text-xl font-medium text-foreground">
             Subscription-based Model Flow
           </h3>
-          <p className="text-sm text-muted-foreground">Centralised Custody</p>
+          <p className="text-sm text-muted-foreground">No Physical Custody Until 70%+ Subscribed</p>
         </div>
       </div>
 
       {/* Desktop Flow */}
       <div className="hidden md:block">
-        <div className="flex items-center justify-center gap-2 lg:gap-4">
-          <FlowStep icon={Diamond} label="Diamond" sublabel="Merchant Inventory" delay={0} />
-          <FlowArrow delay={0.1} />
-          <FlowStep icon={Truck} label="Transfer" sublabel="To Approved Vault" delay={0.15} />
-          <FlowArrow delay={0.2} />
-          <FlowStep icon={Vault} label="Vault Storage" sublabel="Verified & Secured" highlight delay={0.25} />
-          <FlowArrow delay={0.3} />
-          <FlowStep icon={Coins} label="Mint ARVA" sublabel="Token Created" highlight delay={0.35} />
-          <FlowArrow delay={0.4} />
-          <FlowStep icon={Users} label="Marketplace" sublabel="Trade & List" delay={0.45} />
+        {/* Phase 1: Tokenisation without custody */}
+        <div className="mb-4">
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 1: Tokenisation Without Physical Custody</p>
+          <div className="flex items-center justify-center gap-2 lg:gap-4">
+            <FlowStep icon={Diamond} label="Diamond" sublabel="Merchant Inventory" delay={0} />
+            <FlowArrow delay={0.1} />
+            <FlowStep icon={FileCheck} label="Certification" sublabel="Verified Asset" delay={0.15} />
+            <FlowArrow delay={0.2} />
+            <FlowStep icon={Coins} label="Mint Token" sublabel="Token Created" highlight delay={0.25} />
+            <FlowArrow delay={0.3} />
+            <FlowStep icon={Users} label="Marketplace" sublabel="Open Subscription" delay={0.35} />
+            <FlowArrow delay={0.4} />
+            <FlowStep icon={Target} label="70% Threshold" sublabel="Subscription Target" threshold delay={0.45} />
+          </div>
+        </div>
+
+        {/* Phase 2: Vault custody triggered */}
+        <div className="mt-8 pt-8 border-t border-border/50">
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 70%+ Subscribed → Vault Custody Triggered</p>
+          <div className="flex items-center justify-center gap-2 lg:gap-4">
+            <FlowStep icon={TrendingUp} label="≥70% Subscribed" sublabel="Threshold Met" threshold delay={0.5} />
+            <FlowArrow delay={0.55} />
+            <FlowStep icon={Truck} label="Transfer" sublabel="To Approved Vault" delay={0.6} />
+            <FlowArrow delay={0.65} />
+            <FlowStep icon={Vault} label="Vault Storage" sublabel="Proof of Reserve" highlight delay={0.7} />
+            <FlowArrow delay={0.75} />
+            <FlowStep icon={Diamond} label="ARVA Active" sublabel="Fully Backed" highlight delay={0.8} />
+          </div>
         </div>
 
         {/* Redemption Flow */}
         <div className="mt-8 pt-8 border-t border-border/50">
-          <p className="text-sm text-muted-foreground text-center mb-6">Redemption Flow</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Redemption Flow</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
-            <FlowStep icon={Users} label="Buyer" sublabel="Requests Redemption" delay={0.5} />
-            <FlowArrow delay={0.55} />
-            <FlowStep icon={Flame} label="Token Burn" sublabel="ARVA Destroyed" highlight delay={0.6} />
-            <FlowArrow delay={0.65} />
-            <FlowStep icon={Diamond} label="Physical Delivery" sublabel="Diamond Released" delay={0.7} />
+            <FlowStep icon={Users} label="Holder" sublabel="Requests Redemption" delay={0.85} />
+            <FlowArrow delay={0.9} />
+            <FlowStep icon={Flame} label="Token Burn" sublabel="ARVA Destroyed" highlight delay={0.95} />
+            <FlowArrow delay={1.0} />
+            <FlowStep icon={Diamond} label="Physical Delivery" sublabel="Diamond Released" delay={1.05} />
           </div>
         </div>
       </div>
 
       {/* Mobile Flow */}
       <div className="md:hidden space-y-4">
+        <p className="text-xs text-muted-foreground text-center uppercase tracking-wider">Phase 1: Tokenisation (No Custody)</p>
         <div className="flex items-center justify-between">
           <FlowStep icon={Diamond} label="Diamond" sublabel="Inventory" delay={0} />
           <FlowArrow delay={0.1} />
-          <FlowStep icon={Truck} label="Transfer" sublabel="To Vault" delay={0.15} />
+          <FlowStep icon={Coins} label="Token" sublabel="Created" highlight delay={0.15} />
           <FlowArrow delay={0.2} />
-          <FlowStep icon={Vault} label="Vault" sublabel="Verified" highlight delay={0.25} />
+          <FlowStep icon={Target} label="70%" sublabel="Target" threshold delay={0.25} />
         </div>
-        <div className="flex justify-center">
-          <FlowArrow direction="down" delay={0.3} />
+        <div className="pt-4 border-t border-border/50">
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 70%+ → Vault</p>
+          <div className="flex items-center justify-between">
+            <FlowStep icon={TrendingUp} label="≥70%" sublabel="Subscribed" threshold delay={0.3} />
+            <FlowArrow delay={0.35} />
+            <FlowStep icon={Truck} label="Transfer" delay={0.4} />
+            <FlowArrow delay={0.45} />
+            <FlowStep icon={Vault} label="Vault" sublabel="Secured" highlight delay={0.5} />
+          </div>
         </div>
-        <div className="flex items-center justify-center gap-4">
-          <FlowStep icon={Coins} label="Mint ARVA" highlight delay={0.35} />
-          <FlowArrow delay={0.4} />
-          <FlowStep icon={Users} label="Marketplace" delay={0.45} />
-        </div>
-        <div className="pt-6 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4">Redemption</p>
+        <div className="pt-4 border-t border-border/50">
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Redemption</p>
           <div className="flex items-center justify-center gap-4">
-            <FlowStep icon={Flame} label="Burn" highlight delay={0.5} />
-            <FlowArrow delay={0.55} />
-            <FlowStep icon={Diamond} label="Delivery" delay={0.6} />
+            <FlowStep icon={Flame} label="Burn" highlight delay={0.55} />
+            <FlowArrow delay={0.6} />
+            <FlowStep icon={Diamond} label="Delivery" delay={0.65} />
           </div>
         </div>
       </div>

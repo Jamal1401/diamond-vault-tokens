@@ -218,10 +218,11 @@ const HowItWorks = () => {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      "Transfer diamonds to approved vaulting facility",
-                      "Physical verification and inventory system entry",
-                      "Token minting upon successful verification",
-                      "Trade or redeem via the platform",
+                      "Certify and verify diamond while in merchant inventory",
+                      "Tokenise asset—no physical custody required",
+                      "List tokens on marketplace for subscription",
+                      "At 70%+ subscription, transfer to approved vault",
+                      "Vault provides proof of reserve and custody",
                       "Token burning upon physical redemption"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -249,10 +250,11 @@ const HowItWorks = () => {
                   </h4>
                   <ul className="space-y-2">
                     {[
-                      "Every token backed by a verified diamond",
-                      "Simplified proof-of-reserve and compliance",
-                      "Third-party custody enhances buyer confidence",
-                      "Reduced operational risk"
+                      "No upfront custody costs—tokenise before transfer",
+                      "Asset owner realises 70%+ value before vault transfer",
+                      "Reduced operational burden during subscription phase",
+                      "Vault custody only after proven market demand",
+                      "Full proof-of-reserve once threshold is met"
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -415,8 +417,7 @@ const HowItWorks = () => {
                 Subscription-based Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Diamonds must be physically transferred to the vault <strong className="text-foreground">before</strong> tokenisation. 
-                This ensures every ARVA is backed by a verified, secured asset from day one.
+                Tokenisation occurs <strong className="text-foreground">without physical custody</strong>. Only when <strong className="text-amber-500">70% or more</strong> of tokens are subscribed is the asset transferred to an approved vault—meaning the asset owner realises most of the value before custody transfer.
               </p>
             </div>
             <div className="p-6 rounded-xl bg-muted/50 border border-border/50">

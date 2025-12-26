@@ -24,6 +24,10 @@ import {
   CheckCircle2,
   AlertCircle,
   Flame,
+  BarChart3,
+  Layers,
+  Target,
+  GitBranch,
 } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -60,16 +64,6 @@ const PhaseCard = ({ icon: Icon, title, items, index }: PhaseCardProps) => (
     </ul>
   </motion.div>
 );
-
-const processSteps = [
-  { icon: Search, label: "Sourcing & Selection" },
-  { icon: FileCheck, label: "Certification" },
-  { icon: Vault, label: "Vaulting" },
-  { icon: Scale, label: "Legal Structure" },
-  { icon: Coins, label: "Token Issuance" },
-  { icon: Users, label: "Distribution" },
-  { icon: RefreshCcw, label: "Trading & Redemption" },
-];
 
 const faqs = [
   {
@@ -141,33 +135,117 @@ const HowItWorks = () => {
         <div className="container">
           <SectionHeading
             title="The tokenisation pipeline"
+            subtitle="Two distinct paths tailored to different use cases"
           />
 
-          <div className="overflow-x-auto pb-4">
-            <div className="flex items-center justify-center gap-2 md:gap-4 min-w-max px-4">
-              {processSteps.map((step, i) => (
-                <motion.div
-                  key={step.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  viewport={{ once: true }}
-                  className="flex items-center"
-                >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-card border border-border/50 flex items-center justify-center mb-2">
-                      <step.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+          {/* Common Steps */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <p className="text-xs text-muted-foreground text-center mb-6 uppercase tracking-wider">Common Foundation</p>
+            <div className="overflow-x-auto pb-4">
+              <div className="flex items-center justify-center gap-2 md:gap-4 min-w-max px-4">
+                {[
+                  { icon: Search, label: "Sourcing & Selection" },
+                  { icon: FileCheck, label: "Certification" },
+                  { icon: Scale, label: "Legal Structure" },
+                  { icon: Coins, label: "Token Issuance" },
+                ].map((step, i, arr) => (
+                  <motion.div
+                    key={step.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    viewport={{ once: true }}
+                    className="flex items-center"
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-card border border-border/50 flex items-center justify-center mb-2">
+                        <step.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+                      </div>
+                      <span className="text-xs md:text-sm font-medium text-foreground max-w-[80px] md:max-w-[100px]">
+                        {step.label}
+                      </span>
                     </div>
-                    <span className="text-xs md:text-sm font-medium text-foreground max-w-[80px] md:max-w-[100px]">
-                      {step.label}
-                    </span>
-                  </div>
-                  {i < processSteps.length - 1 && (
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground mx-2 md:mx-4 flex-shrink-0" />
-                  )}
-                </motion.div>
-              ))}
+                    {i < arr.length - 1 && (
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground mx-2 md:mx-4 flex-shrink-0" />
+                    )}
+                  </motion.div>
+                ))}
+                <div className="flex items-center mx-2 md:mx-4">
+                  <GitBranch className="w-6 h-6 md:w-7 md:h-7 text-primary rotate-90" />
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* Branching Paths */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Subscription-based Path */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gradient-card border border-primary/30"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium">
+                  Model 1
+                </span>
+                <h4 className="font-display text-lg font-medium text-foreground">Subscription-based</h4>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { icon: Target, label: "70% Subscription Target", highlight: true },
+                  { icon: Vault, label: "Vault Custody Triggered" },
+                  { icon: BarChart3, label: "Public Exchange Listing" },
+                  { icon: Layers, label: "Trading, Staking & DeFi" },
+                ].map((step, i) => (
+                  <div key={step.label} className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${step.highlight ? 'bg-amber-500/20 border border-amber-500/50' : 'bg-primary/10'}`}>
+                      <step.icon className={`w-5 h-5 ${step.highlight ? 'text-amber-500' : 'text-primary'}`} />
+                    </div>
+                    <span className="text-sm text-muted-foreground">{step.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50">
+                No physical delivery—tokens trade on public exchanges
+              </p>
+            </motion.div>
+
+            {/* Digital-Twin Path */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-2xl bg-gradient-card border border-border/50"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <span className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs font-medium">
+                  Model 2
+                </span>
+                <h4 className="font-display text-lg font-medium text-foreground">Digital-Twin</h4>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { icon: Diamond, label: "1:1 Digital Twin Created", highlight: true },
+                  { icon: Users, label: "Marketplace Trading" },
+                  { icon: Flame, label: "Optional: Token Burn" },
+                  { icon: Diamond, label: "Physical Diamond Delivery" },
+                ].map((step, i) => (
+                  <div key={step.label} className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${step.highlight ? 'bg-primary/20 border border-primary/50' : 'bg-primary/10'}`}>
+                      <step.icon className={`w-5 h-5 ${step.highlight ? 'text-primary' : 'text-primary'}`} />
+                    </div>
+                    <span className="text-sm text-muted-foreground">{step.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50">
+                Holder can elect physical delivery at any time
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>

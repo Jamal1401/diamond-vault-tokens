@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     question: "How does redemption work?",
-    answer: "Token holders can redeem for underlying diamonds (subject to minimum thresholds) or exit through secondary markets where available. Upon redemption, the corresponding token is burned, removing it from circulation. Redemption processes and timelines are specified in offering documentation."
+    answer: "Token holders may exit their position through available secondary markets, where supported, or by exercising their right to redeem the underlying asset. For tokens structured as digital twins, the holder can elect to receive the physical diamond in place of the digital representation, subject to platform terms. Upon a valid redemption, the corresponding token is permanently 'burned', removing it from circulation and ensuring that no token exists without backing. The precise redemption mechanics will be set out in the relevant offerings and platform documentation."
   },
   {
     question: "Which tokenisation model is right for me?",

@@ -139,7 +139,7 @@ const HowItWorks = () => {
           />
 
           {/* Common Steps */}
-          <div className="max-w-5xl mx-auto mb-12">
+          <div className="max-w-5xl mx-auto mb-0">
             <p className="text-xs text-muted-foreground text-center mb-6 uppercase tracking-wider">Common Foundation</p>
             <div className="overflow-x-auto pb-4">
               <div className="flex items-center justify-center gap-2 md:gap-4 min-w-max px-4">
@@ -170,11 +170,78 @@ const HowItWorks = () => {
                     )}
                   </motion.div>
                 ))}
-                <div className="flex items-center mx-2 md:mx-4">
-                  <GitBranch className="w-6 h-6 md:w-7 md:h-7 text-primary rotate-90" />
-                </div>
               </div>
             </div>
+          </div>
+
+          {/* Animated Branch Connector */}
+          <div className="relative max-w-5xl mx-auto h-20 md:h-24">
+            {/* Center vertical line */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="absolute left-1/2 top-0 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary to-primary/50 origin-top"
+            />
+            
+            {/* Horizontal connector */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="absolute left-1/4 right-1/4 top-8 md:top-10 h-0.5 bg-gradient-to-r from-primary/50 via-primary to-primary/50"
+            />
+            
+            {/* Left branch down */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              transition={{ duration: 0.3, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="absolute left-1/4 top-8 md:top-10 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary/50 to-primary origin-top"
+            />
+            
+            {/* Right branch down */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              transition={{ duration: 0.3, delay: 0.7 }}
+              viewport={{ once: true }}
+              className="absolute right-1/4 top-8 md:top-10 w-0.5 h-8 md:h-10 bg-gradient-to-b from-primary/50 to-primary origin-top"
+            />
+            
+            {/* Left arrow indicator */}
+            <motion.div
+              initial={{ opacity: 0, y: -5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+              viewport={{ once: true }}
+              className="absolute left-1/4 -translate-x-1/2 bottom-0 w-3 h-3 border-b-2 border-r-2 border-primary rotate-45"
+            />
+            
+            {/* Right arrow indicator */}
+            <motion.div
+              initial={{ opacity: 0, y: -5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+              viewport={{ once: true }}
+              className="absolute right-1/4 translate-x-1/2 bottom-0 w-3 h-3 border-b-2 border-r-2 border-primary rotate-45"
+            />
+            
+            {/* Animated pulse on center */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="absolute left-1/2 top-8 md:top-10 -translate-x-1/2 -translate-y-1/2"
+            >
+              <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              </div>
+            </motion.div>
           </div>
 
           {/* Branching Paths */}
@@ -183,10 +250,13 @@ const HowItWorks = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-gradient-card border border-primary/30"
+              className="p-6 rounded-2xl bg-gradient-card border border-primary/30 relative"
             >
+              {/* Connection dot */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background" />
+              
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium">
                   Model 1
@@ -200,12 +270,19 @@ const HowItWorks = () => {
                   { icon: BarChart3, label: "Public Exchange Listing" },
                   { icon: Layers, label: "Trading, Staking & DeFi" },
                 ].map((step, i) => (
-                  <div key={step.label} className="flex items-center gap-3">
+                  <motion.div 
+                    key={step.label} 
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 1.1 + i * 0.1 }}
+                    viewport={{ once: true }}
+                  >
                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${step.highlight ? 'bg-amber-500/20 border border-amber-500/50' : 'bg-primary/10'}`}>
                       <step.icon className={`w-5 h-5 ${step.highlight ? 'text-amber-500' : 'text-primary'}`} />
                     </div>
                     <span className="text-sm text-muted-foreground">{step.label}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50">
@@ -217,10 +294,13 @@ const HowItWorks = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 1 }}
               viewport={{ once: true }}
-              className="p-6 rounded-2xl bg-gradient-card border border-border/50"
+              className="p-6 rounded-2xl bg-gradient-card border border-border/50 relative"
             >
+              {/* Connection dot */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-background" />
+              
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-xs font-medium">
                   Model 2
@@ -234,12 +314,19 @@ const HowItWorks = () => {
                   { icon: Flame, label: "Optional: Token Burn" },
                   { icon: Diamond, label: "Physical Diamond Delivery" },
                 ].map((step, i) => (
-                  <div key={step.label} className="flex items-center gap-3">
+                  <motion.div 
+                    key={step.label} 
+                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 1.1 + i * 0.1 }}
+                    viewport={{ once: true }}
+                  >
                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${step.highlight ? 'bg-primary/20 border border-primary/50' : 'bg-primary/10'}`}>
-                      <step.icon className={`w-5 h-5 ${step.highlight ? 'text-primary' : 'text-primary'}`} />
+                      <step.icon className={`w-5 h-5 text-primary`} />
                     </div>
                     <span className="text-sm text-muted-foreground">{step.label}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border/50">

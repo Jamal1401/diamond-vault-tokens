@@ -270,4 +270,43 @@
   .animate-pulse-glow {
     animation: pulse-glow 3s ease-in-out infinite;
   }
+
+  @keyframes badge-shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes badge-glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px hsl(42 78% 55% / 0.4), 0 0 16px hsl(42 78% 55% / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 16px hsl(42 78% 55% / 0.6), 0 0 32px hsl(42 78% 55% / 0.3);
+    }
+  }
+
+  .badge-first {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: linear-gradient(
+      90deg,
+      hsl(42 78% 55% / 0.15) 0%,
+      hsl(42 78% 65% / 0.25) 25%,
+      hsl(42 78% 55% / 0.15) 50%,
+      hsl(42 78% 65% / 0.25) 75%,
+      hsl(42 78% 55% / 0.15) 100%
+    );
+    background-size: 200% 100%;
+    border: 1px solid hsl(42 78% 55% / 0.4);
+    animation: badge-shimmer 3s linear infinite, badge-glow-pulse 2s ease-in-out infinite;
+    font-weight: 600;
+    color: hsl(42 78% 60%);
+    text-shadow: 0 0 8px hsl(42 78% 55% / 0.5);
+  }
 }

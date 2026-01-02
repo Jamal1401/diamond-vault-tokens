@@ -103,16 +103,6 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Billiton Digital. All rights reserved.
-          </p>
-          <p className="text-xs text-muted-foreground/60">
-            Diamond tokenisation involves risks. Investment products are for eligible investors only.
-          </p>
-        </div>
       </div>
     </footer>
   );

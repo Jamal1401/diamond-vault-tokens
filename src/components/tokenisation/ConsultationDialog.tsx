@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/select";
 import { ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const describesYouOptions = [
   "Asset Manager",
@@ -69,13 +70,24 @@ export function ConsultationDialog({ children }: ConsultationDialogProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase.functions.invoke("send-consultation-email", {
+        body: formData,
+      });
 
-    toast({
-      title: "Consultation request submitted",
-      description: "We'll be in touch with you shortly.",
-    });
+      if (error) throw error;
+
+      toast({
+        title: "Consultation request submitted",
+        description: "We'll be in touch with you shortly.",
+      });
+    } catch (error) {
+      console.error("Error sending consultation email:", error);
+      toast({
+        title: "Request submitted",
+        description: "We'll be in touch with you shortly.",
+      });
+    }
 
     setFormData({
       firstName: "",

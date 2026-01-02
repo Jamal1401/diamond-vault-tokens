@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**URL**: [Tokenisation website Link](https://lovable.dev/projects/59c8bfb3-fb48-4d81-a256-8be30d7788a1)
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Simply visit the [Lovable Project]([)](https://lovable.dev/projects/59c8bfb3-fb48-4d81-a256-8be30d7788a1) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 

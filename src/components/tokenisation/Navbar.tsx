@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Diamond } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ConsultationDialog } from "./ConsultationDialog";
 
@@ -25,7 +25,10 @@ export const Navbar = () => {
           <Link to="/tokenisation" className="flex items-center gap-2 group">
             <div className="flex flex-col">
               <span className="font-display text-xl font-bold text-primary tracking-wide">BILLITON</span>
-              <span className="text-xs text-muted-foreground -mt-1">Diamond Tokenisation</span>
+              <div className="flex items-center gap-1.5 -mt-0.5">
+                <span className="text-sm font-bold text-foreground">Diamond Tokenisation</span>
+                <Diamond className="w-3.5 h-3.5 text-primary animate-spin" style={{ animationDuration: '3s' }} />
+              </div>
             </div>
           </Link>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Diamond, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import billitonLogo from "@/assets/billiton-logo.jpg";
 
 const footerLinks = {
   tokenisation: [
@@ -27,7 +28,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/tokenisation" className="flex items-center gap-2 mb-4">
-              <Diamond className="w-8 h-8 text-primary" />
+              <img src={billitonLogo} alt="Billiton" className="h-10 w-auto" />
               <div className="flex flex-col">
                 <span className="font-display text-lg font-semibold text-foreground">Billiton</span>
                 <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Digital</span>

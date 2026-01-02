@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Diamond } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ConsultationDialog } from "./ConsultationDialog";
+import billitonLogo from "@/assets/billiton-logo.png";
 const navLinks = [
   { href: "/tokenisation", label: "Overview" },
   { href: "/tokenisation/asset-owners", label: "Asset Owners" },
@@ -21,8 +22,12 @@ export const Navbar = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/tokenisation" className="flex items-center gap-2 group">
-            <Diamond className="w-8 h-8 text-primary transition-transform group-hover:scale-110" />
+          <Link to="/tokenisation" className="flex items-center gap-3 group">
+            <img 
+              src={billitonLogo} 
+              alt="Billiton" 
+              className="w-10 h-10 transition-transform group-hover:scale-110" 
+            />
             <div className="flex flex-col">
               <span className="font-display text-lg font-semibold text-foreground">Billiton</span>
               <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Digital</span>

@@ -27,13 +27,7 @@ export const Navbar = () => {
               <span className="font-display text-xl font-bold text-primary tracking-wide">BILLITON</span>
               <div className="flex items-center gap-1.5 -mt-0.5">
                 <span className="text-sm font-bold text-foreground">Diamond Tokenisation</span>
-                <Diamond 
-                  className="w-3.5 h-3.5 text-primary animate-spin drop-shadow-[0_0_6px_hsl(var(--primary))]" 
-                  style={{ 
-                    animationDuration: '3s',
-                    filter: 'drop-shadow(0 0 4px hsl(var(--primary))) drop-shadow(0 0 8px hsl(var(--primary)/0.5))'
-                  }} 
-                />
+                <Diamond className="w-3.5 h-3.5 text-primary animate-diamond-shimmer" />
               </div>
             </div>
           </Link>

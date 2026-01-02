@@ -65,7 +65,7 @@ const TokenisationHome = () => {
                 Billiton Digital
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
-                First regulated{" "}
+                First{" "}
                 <span className="text-gradient-gold">Diamond Tokenisation Platform</span>
                 <br className="hidden md:block" />
                 <span className="text-muted-foreground text-3xl md:text-4xl lg:text-5xl xl:text-6xl">in Dubai's </span>

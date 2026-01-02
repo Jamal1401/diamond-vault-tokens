@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ConsultationDialog } from "./ConsultationDialog";
-import { BillitonLogo } from "./BillitonLogo";
+
 const navLinks = [
   { href: "/tokenisation", label: "Overview" },
   { href: "/tokenisation/asset-owners", label: "Asset Owners" },
@@ -23,11 +23,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/tokenisation" className="flex items-center gap-2 group">
-            <BillitonLogo className="text-primary group-hover:scale-110" size={36} />
-            <div className="flex flex-col">
-              <span className="font-display text-lg font-semibold text-foreground">Billiton</span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Digital</span>
-            </div>
+            <span className="font-display text-lg font-semibold text-foreground">Billiton Diamond Tokenisation</span>
           </Link>
 
           {/* Desktop Navigation */}

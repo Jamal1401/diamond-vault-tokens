@@ -267,7 +267,30 @@
     }
   }
 
+  @keyframes diamond-shimmer {
+    0%, 100% { 
+      filter: drop-shadow(0 0 4px hsl(42 78% 55%)) drop-shadow(0 0 8px hsl(42 78% 55% / 0.5));
+      opacity: 1;
+    }
+    25% {
+      filter: drop-shadow(0 0 8px hsl(42 78% 70%)) drop-shadow(0 0 16px hsl(42 78% 55% / 0.8));
+      opacity: 1;
+    }
+    50% { 
+      filter: drop-shadow(0 0 12px hsl(42 78% 75%)) drop-shadow(0 0 24px hsl(42 78% 55%));
+      opacity: 0.9;
+    }
+    75% {
+      filter: drop-shadow(0 0 6px hsl(200 30% 90%)) drop-shadow(0 0 12px hsl(42 78% 55% / 0.6));
+      opacity: 1;
+    }
+  }
+
   .animate-pulse-glow {
     animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-diamond-shimmer {
+    animation: diamond-shimmer 2s ease-in-out infinite, spin 3s linear infinite;
   }
 }

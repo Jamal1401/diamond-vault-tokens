@@ -27,10 +27,12 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/tokenisation" className="flex items-center gap-2 mb-4">
-              <Diamond className="w-8 h-8 text-primary" />
               <div className="flex flex-col">
-                <span className="font-display text-lg font-semibold text-foreground">Billiton</span>
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground -mt-1">Digital</span>
+                <span className="font-display text-xl font-bold text-primary tracking-wide">BILLITON</span>
+                <div className="flex items-center gap-1.5 -mt-0.5">
+                  <span className="text-sm font-bold text-foreground">Diamond Tokenisation</span>
+                  <Diamond className="w-3.5 h-3.5 text-primary animate-diamond-shimmer" />
+                </div>
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">

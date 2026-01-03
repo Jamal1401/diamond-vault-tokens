@@ -117,8 +117,12 @@ export default {
           to: { backgroundPosition: "-200% 0" },
         },
         glow: {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "0.8" },
+          "0%, 100%": { 
+            boxShadow: "0 0 15px hsl(var(--primary) / 0.4), 0 0 30px hsl(var(--primary) / 0.2)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 25px hsl(var(--primary) / 0.6), 0 0 50px hsl(var(--primary) / 0.3)" 
+          },
         },
         sparkle: {
           "0%, 100%": { opacity: "0", transform: "scale(0) rotate(0deg)" },

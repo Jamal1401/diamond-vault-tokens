@@ -64,9 +64,6 @@ const TokenisationHome = () => {
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
                 First{" "}
                 <span className="text-gradient-gold">Diamond Tokenisation Platform</span>
-                <br className="hidden md:block" />
-                <span className="text-muted-foreground text-3xl md:text-4xl lg:text-5xl xl:text-6xl">in Dubai's </span>
-                <span className="text-gradient-gold text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold">DMCC</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Billiton, together with the UAE's leading tokenisation partner, has launched Dubai's first VARA‑regulated diamond tokenisation platform from DMCC—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.

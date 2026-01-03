@@ -61,9 +61,6 @@ const TokenisationHome = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left side - Content */}
             <div>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Billiton Digital
-              </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
                 First{" "}
                 <span className="text-gradient-gold">Diamond Tokenisation Platform</span>

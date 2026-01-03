@@ -66,7 +66,7 @@ const TokenisationHome = () => {
                 <span className="text-gradient-gold">Diamond Tokenisation Platform</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                <span className="text-gradient-gold font-semibold">Dubai, DMCC</span> based Billiton Diamond, together with the UAE's leading tokenisation partner, has launched Dubai's first VARA‑regulated diamond tokenisation platform from DMCC—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.
+                <span className="inline-block px-3 py-1 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-md shadow-[0_0_20px_hsl(var(--primary)/0.5)] animate-[glow_2s_ease-in-out_infinite]">Dubai, DMCC</span> based Billiton Diamond, together with the UAE's leading tokenisation partner, has launched Dubai's first VARA‑regulated diamond tokenisation platform from DMCC—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <ConsultationDialog>

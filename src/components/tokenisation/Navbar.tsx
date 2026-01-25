@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Diamond } from "lucide-react";
+import { Menu, X, Diamond, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ConsultationDialog } from "./ConsultationDialog";
 
@@ -53,12 +53,13 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://billitonauctions.com"
+              href="https://billitonauctions.com/about"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button variant="gold-outline" size="sm">
-                Go to Home Page
+                <Home className="w-4 h-4" />
+                Home Page
               </Button>
             </a>
             <ConsultationDialog>
@@ -105,14 +106,15 @@ export const Navbar = () => {
               ))}
               <div className="pt-2 space-y-2">
                 <a
-                  href="https://billitonauctions.com"
+                  href="https://billitonauctions.com/about"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                   onClick={() => setIsOpen(false)}
                 >
                   <Button variant="gold-outline" className="w-full">
-                    Go to Home Page
+                    <Home className="w-4 h-4" />
+                    Home Page
                   </Button>
                 </a>
                 <ConsultationDialog>

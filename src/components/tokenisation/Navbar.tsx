@@ -52,6 +52,15 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://billitonauctions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="gold-outline" size="sm">
+                Go to Home Page
+              </Button>
+            </a>
             <ConsultationDialog>
               <Button variant="gold" size="sm">
                 Book Consultation
@@ -94,7 +103,18 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2">
+              <div className="pt-2 space-y-2">
+                <a
+                  href="https://billitonauctions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Button variant="gold-outline" className="w-full">
+                    Go to Home Page
+                  </Button>
+                </a>
                 <ConsultationDialog>
                   <Button variant="gold" className="w-full" onClick={() => setIsOpen(false)}>
                     Book Consultation

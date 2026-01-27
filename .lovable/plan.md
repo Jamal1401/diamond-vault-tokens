@@ -1,73 +1,107 @@
 
-# Store Consultation Form Submissions in Database
+# Store All Form Submissions in Database
 
 ## Overview
-Add a database table to permanently store all consultation form submissions. This will give you a complete record of all inquiries, in addition to the email notifications you already receive.
+Add database storage for the two remaining forms that currently only show toast notifications:
+1. **Investors "Register Interest" form** - collects email, investor type, and expected ticket size
+2. **Asset Owners "Request Assessment" form** - collects name, organisation, role, email, inventory value, and description
+
+Both forms will follow the same pattern as the existing Consultation form: save to database first, then send email notification to your team.
 
 ## What Will Be Built
 
-### 1. Database Table for Inquiries
-A new `consultation_inquiries` table will store:
-- First name, last name, and email
-- What describes the inquirer (e.g., "Asset Manager", "Investor")
-- What they're interested in (e.g., "Tokenization", "Investment Opportunities")
-- Their message
+### 1. Two New Database Tables
+
+**investor_inquiries** table:
+- Email address
+- Investor type(s) - Investor, Platform, Advisor (stored as array)
+- Expected ticket size
+- Email sent status
 - Submission timestamp
-- Email sent status (to track if notification was delivered)
 
-### 2. Updated Backend Function
-The existing email-sending function will be enhanced to:
-- Save the inquiry to the database first
-- Then send the email notification
-- Record whether the email was successfully sent
+**asset_owner_inquiries** table:
+- Name, organisation, and role
+- Email address
+- Approximate asset value
+- Holdings description
+- Email sent status
+- Submission timestamp
 
-### 3. Benefits
-- Permanent record of all inquiries even if emails fail
-- Ability to search, filter, and export inquiry data later
-- Track inquiry trends over time
-- No changes needed to the front-end form
+### 2. Two New Backend Functions
+
+**save-investor-inquiry**: Handles the Investors page form
+- Saves inquiry to database
+- Sends email notification to your team
+- Tracks email delivery status
+
+**save-asset-owner-inquiry**: Handles the Asset Owners page form
+- Saves inquiry to database
+- Sends email notification to your team
+- Tracks email delivery status
+
+### 3. Updated Form Pages
+
+Both forms will be updated to call their respective backend functions instead of just showing a toast.
 
 ---
 
 ## Technical Details
 
-### Database Migration
+### Database Migrations
 
 ```sql
--- Create table for consultation inquiries
-CREATE TABLE public.consultation_inquiries (
+-- Table for investor interest registrations
+CREATE TABLE public.investor_inquiries (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
   email TEXT NOT NULL,
-  describes_you TEXT NOT NULL,
-  interested_in TEXT NOT NULL,
-  message TEXT NOT NULL,
+  investor_types TEXT[] NOT NULL DEFAULT '{}',
+  ticket_size TEXT,
   email_sent BOOLEAN DEFAULT false,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
 );
 
--- Enable Row Level Security
-ALTER TABLE public.consultation_inquiries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.investor_inquiries ENABLE ROW LEVEL SECURITY;
 
--- Allow the edge function (using service role) to insert records
--- No public access policies needed since this is admin-only data
+-- Table for asset owner assessment requests
+CREATE TABLE public.asset_owner_inquiries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  organisation TEXT NOT NULL,
+  role TEXT NOT NULL,
+  email TEXT NOT NULL,
+  inventory_value TEXT,
+  description TEXT,
+  email_sent BOOLEAN DEFAULT false,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
+);
+
+ALTER TABLE public.asset_owner_inquiries ENABLE ROW LEVEL SECURITY;
 ```
 
-### Edge Function Update
-Update `supabase/functions/send-consultation-email/index.ts` to:
-1. Create a Supabase client with the service role key
-2. Insert the inquiry record into the database
-3. Send the email notification
-4. Update the record with email sent status
+### Edge Functions
 
-### Files to Modify
+Two new backend functions following the same pattern as `send-consultation-email`:
+
+| Function | Purpose |
+|----------|---------|
+| `save-investor-inquiry` | Save investor registrations + send email |
+| `save-asset-owner-inquiry` | Save asset owner requests + send email |
+
+### Frontend Updates
+
 | File | Change |
 |------|--------|
-| Database | New `consultation_inquiries` table |
-| `supabase/functions/send-consultation-email/index.ts` | Add database insert logic |
+| `src/pages/tokenisation/Investors.tsx` | Call backend function on form submit |
+| `src/pages/tokenisation/AssetOwners.tsx` | Call backend function on form submit |
 
-### Security Considerations
-- The table uses RLS but has no public access policies
-- Only the backend function (using service role) can write to this table
-- Sensitive contact information is protected from public access
+### Email Notifications
+
+All submissions will trigger email notifications to the same address (`jamal.akhtar@billitondiamondauctions.com`) with appropriate subject lines:
+- Investor: "New Investor Interest Registration"
+- Asset Owner: "New Asset Assessment Request"
+
+### Security
+
+- Both tables use RLS with no public access policies
+- Only backend functions (using service role) can write to these tables
+- All sensitive contact information is protected from public access

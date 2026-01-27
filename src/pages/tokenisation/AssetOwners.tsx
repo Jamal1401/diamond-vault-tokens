@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const challenges = [
   {
@@ -152,20 +153,48 @@ const AssetOwners = () => {
     description: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Assessment request submitted",
-      description: "Our team will contact you within 2 business days.",
-    });
-    setFormData({
-      name: "",
-      organisation: "",
-      role: "",
-      email: "",
-      inventoryValue: "",
-      description: "",
-    });
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke("save-asset-owner-inquiry", {
+        body: {
+          name: formData.name,
+          organisation: formData.organisation,
+          role: formData.role,
+          email: formData.email,
+          inventoryValue: formData.inventoryValue,
+          description: formData.description,
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Assessment request submitted",
+        description: "Our team will contact you within 2 business days.",
+      });
+      setFormData({
+        name: "",
+        organisation: "",
+        role: "",
+        email: "",
+        inventoryValue: "",
+        description: "",
+      });
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -559,8 +588,8 @@ const AssetOwners = () => {
                 />
               </div>
 
-              <Button variant="gold" type="submit" className="w-full">
-                Submit Assessment Request
+              <Button variant="gold" type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit Assessment Request"}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </motion.form>

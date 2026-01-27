@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const investorTypes = [
   {
@@ -146,13 +147,38 @@ const Investors = () => {
     investorType: [] as string[],
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Interest registered",
-      description: "Billiton will share offerings after eligibility checks.",
-    });
-    setFormData({ email: "", ticketSize: "", investorType: [] });
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke("save-investor-inquiry", {
+        body: {
+          email: formData.email,
+          investorTypes: formData.investorType,
+          ticketSize: formData.ticketSize,
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Interest registered",
+        description: "Billiton will share offerings after eligibility checks.",
+      });
+      setFormData({ email: "", ticketSize: "", investorType: [] });
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCheckboxChange = (type: string, checked: boolean) => {
@@ -457,8 +483,8 @@ const Investors = () => {
                 />
               </div>
 
-              <Button variant="gold" type="submit" className="w-full">
-                Register interest
+              <Button variant="gold" type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Register interest"}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </motion.form>

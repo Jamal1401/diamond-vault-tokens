@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      asset_owner_inquiries: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          email: string
+          email_sent: boolean | null
+          id: string
+          inventory_value: string | null
+          name: string
+          organisation: string
+          role: string
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          email: string
+          email_sent?: boolean | null
+          id?: string
+          inventory_value?: string | null
+          name: string
+          organisation: string
+          role: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          email?: string
+          email_sent?: boolean | null
+          id?: string
+          inventory_value?: string | null
+          name?: string
+          organisation?: string
+          role?: string
+        }
+        Relationships: []
+      }
       consultation_inquiries: {
         Row: {
           created_at: string | null
@@ -47,6 +83,33 @@ export type Database = {
           interested_in?: string
           last_name?: string
           message?: string
+        }
+        Relationships: []
+      }
+      investor_inquiries: {
+        Row: {
+          created_at: string | null
+          email: string
+          email_sent: boolean | null
+          id: string
+          investor_types: string[]
+          ticket_size: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          email_sent?: boolean | null
+          id?: string
+          investor_types?: string[]
+          ticket_size?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          email_sent?: boolean | null
+          id?: string
+          investor_types?: string[]
+          ticket_size?: string | null
         }
         Relationships: []
       }

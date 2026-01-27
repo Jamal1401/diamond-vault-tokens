@@ -1,1 +1,10 @@
 project_id = "tyywkkjwhgylnvxqgula"
+
+[functions.send-consultation-email]
+verify_jwt = false
+
+[functions.save-investor-inquiry]
+verify_jwt = false
+
+[functions.save-asset-owner-inquiry]
+verify_jwt = false

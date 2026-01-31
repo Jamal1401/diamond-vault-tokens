@@ -135,7 +135,6 @@ const useCases = [
 
 const onboardingRequirements = [
   "KYC/AML documentation as per DMCC regulations for precious stones",
-  "Proof of ownership and provenance documentation",
   "Existing GIA, IGI, or equivalent lab certifications",
   "Minimum asset value threshold (contact us for details)",
   "Agreement to custody and tokenisation terms",

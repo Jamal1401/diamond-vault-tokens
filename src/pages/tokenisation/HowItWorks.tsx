@@ -366,7 +366,7 @@ const HowItWorks = () => {
               </div>
               <div className="space-y-3">
                 {[
-                  { icon: Target, label: "70% Subscription Target", highlight: true },
+                  { icon: Target, label: "85% Subscription Target", highlight: true },
                   { icon: Vault, label: "Vault Custody Triggered" },
                   { icon: BarChart3, label: "Public Exchange Listing" },
                   { icon: Layers, label: "Trading, Staking & DeFi" },
@@ -473,7 +473,7 @@ const HowItWorks = () => {
               </div>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Tokenisation occurs without the need for any physical custody. Only when 70% or more of the tokens are subscribed to is the asset taken into custody of a predefined and verified vault. The vault serves as the central point of custody, verification, and proof of reserve.
+                Tokenisation occurs without the need for any physical custody. Only when 85% or more of the tokens are subscribed to is the asset taken into custody of a predefined and verified vault. The vault serves as the central point of custody, verification, and proof of reserve.
               </p>
 
               <div className="space-y-6">
@@ -487,7 +487,7 @@ const HowItWorks = () => {
                       "Certify and verify diamond while in merchant inventory",
                       "Tokenise asset—no physical custody required",
                       "List tokens on marketplace for subscription",
-                      "At 70%+ subscription, transfer to approved vault",
+                      "At 85%+ subscription, transfer to approved vault",
                       "Vault provides proof of reserve and custody",
                       "Tokens listed on public exchanges for trading",
                       "Available for staking, DeFi, and yield strategies"
@@ -506,7 +506,7 @@ const HowItWorks = () => {
                     Key Point
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
-                    The asset is transferred to the vault when more than 70% of tokens are subscribed—meaning the asset owner has already realised most of the value before physical custody transfer.
+                    The asset is transferred to the vault when more than 85% of tokens are subscribed—meaning the asset owner has already realised most of the value before physical custody transfer.
                   </p>
                 </div>
 
@@ -518,7 +518,7 @@ const HowItWorks = () => {
                   <ul className="space-y-2">
                     {[
                       "No upfront custody costs—tokenise before transfer",
-                      "Asset owner realises 70%+ value before vault transfer",
+                      "Asset owner realises 85%+ value before vault transfer",
                       "Reduced operational burden during subscription phase",
                       "Vault custody only after proven market demand",
                       "Full proof-of-reserve once threshold is met",
@@ -686,7 +686,7 @@ const HowItWorks = () => {
                 Subscription-based Key Point
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Tokenisation occurs <strong className="text-foreground">without physical custody</strong>. Only when <strong className="text-amber-500">70% or more</strong> of tokens are subscribed is the asset transferred to an approved vault. <strong className="text-foreground">No physical delivery</strong>—tokens are listed on public exchanges for trading, staking, and DeFi.
+                Tokenisation occurs <strong className="text-foreground">without physical custody</strong>. Only when <strong className="text-amber-500">85% or more</strong> of tokens are subscribed is the asset transferred to an approved vault. <strong className="text-foreground">No physical delivery</strong>—tokens are listed on public exchanges for trading, staking, and DeFi.
               </p>
             </div>
             <div className="p-6 rounded-xl bg-muted/50 border border-border/50">

@@ -86,7 +86,7 @@ export const VaultBasedDiagram = () => {
           <h3 className="font-display text-lg md:text-xl font-medium text-foreground">
             Subscription-based Model Flow
           </h3>
-          <p className="text-sm text-muted-foreground">No Physical Custody Until 70%+ Subscribed</p>
+          <p className="text-sm text-muted-foreground">No Physical Custody Until 85%+ Subscribed</p>
         </div>
       </div>
 
@@ -104,15 +104,15 @@ export const VaultBasedDiagram = () => {
             <FlowArrow delay={0.3} />
             <FlowStep icon={Users} label="Marketplace" sublabel="Open Subscription" delay={0.35} />
             <FlowArrow delay={0.4} />
-            <FlowStep icon={Target} label="70% Threshold" sublabel="Subscription Target" threshold delay={0.45} />
+            <FlowStep icon={Target} label="85% Threshold" sublabel="Subscription Target" threshold delay={0.45} />
           </div>
         </div>
 
         {/* Phase 2: Vault custody triggered */}
         <div className="mt-8 pt-8 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 70%+ Subscribed → Vault Custody Triggered</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 85%+ Subscribed → Vault Custody Triggered</p>
           <div className="flex items-center justify-center gap-2 lg:gap-4">
-            <FlowStep icon={TrendingUp} label="≥70% Subscribed" sublabel="Threshold Met" threshold delay={0.5} />
+            <FlowStep icon={TrendingUp} label="≥85% Subscribed" sublabel="Threshold Met" threshold delay={0.5} />
             <FlowArrow delay={0.55} />
             <FlowStep icon={Truck} label="Transfer" sublabel="To Approved Vault" delay={0.6} />
             <FlowArrow delay={0.65} />
@@ -145,12 +145,12 @@ export const VaultBasedDiagram = () => {
           <FlowArrow delay={0.1} />
           <FlowStep icon={Coins} label="Token" sublabel="Created" highlight delay={0.15} />
           <FlowArrow delay={0.2} />
-          <FlowStep icon={Target} label="70%" sublabel="Target" threshold delay={0.25} />
+          <FlowStep icon={Target} label="85%" sublabel="Target" threshold delay={0.25} />
         </div>
         <div className="pt-4 border-t border-border/50">
-          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 70%+ → Vault</p>
+          <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-wider">Phase 2: 85%+ → Vault</p>
           <div className="flex items-center justify-between">
-            <FlowStep icon={TrendingUp} label="≥70%" sublabel="Subscribed" threshold delay={0.3} />
+            <FlowStep icon={TrendingUp} label="≥85%" sublabel="Subscribed" threshold delay={0.3} />
             <FlowArrow delay={0.35} />
             <FlowStep icon={Truck} label="Transfer" delay={0.4} />
             <FlowArrow delay={0.45} />

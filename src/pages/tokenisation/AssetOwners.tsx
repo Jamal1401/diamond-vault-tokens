@@ -347,7 +347,6 @@ const AssetOwners = () => {
         <div className="container">
           <SectionHeading
             title="Issuance process"
-            subtitle="From sourcing to token listing—aligned with both tokenisation models."
           />
 
           <div className="max-w-4xl mx-auto">

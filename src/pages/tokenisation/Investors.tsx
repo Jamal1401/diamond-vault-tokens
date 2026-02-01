@@ -280,7 +280,7 @@ const Investors = () => {
             subtitle="Billiton offers a range of ARVA products — regulated RWA tokens — tailored to different investor needs."
           />
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {investmentTypes.map((type, i) => (
               <div key={type.title} className="relative">
                 {type.isArva && (

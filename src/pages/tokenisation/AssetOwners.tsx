@@ -338,12 +338,6 @@ const AssetOwners = () => {
               </ul>
             </motion.div>
 
-            <div className="mt-8">
-              <Button variant="gold">
-                Learn More About Our Platform
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
           </div>
         </div>
       </section>

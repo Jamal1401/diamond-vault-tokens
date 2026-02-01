@@ -402,14 +402,6 @@ const TokenisationHome = () => {
               ]}
             />
 
-            <div className="text-center mt-8">
-              <Link to="/tokenisation/faqs">
-                <Button variant="outline">
-                  View all FAQs
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>

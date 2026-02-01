@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FeatureCard } from "@/components/tokenisation/FeatureCard";
 import { Navbar } from "@/components/tokenisation/Navbar";
@@ -18,7 +15,6 @@ import {
   Scale,
   FileCheck,
   Shield,
-  Vault,
   Coins,
   ListChecks,
   Users,
@@ -29,9 +25,6 @@ import {
   RefreshCw,
   HeadphonesIcon,
 } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const challenges = [
   {
@@ -142,59 +135,6 @@ const onboardingRequirements = [
 
 const AssetOwners = () => {
   useScrollToNextPage();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    organisation: "",
-    role: "",
-    email: "",
-    inventoryValue: "",
-    description: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const { error } = await supabase.functions.invoke("save-asset-owner-inquiry", {
-        body: {
-          name: formData.name,
-          organisation: formData.organisation,
-          role: formData.role,
-          email: formData.email,
-          inventoryValue: formData.inventoryValue,
-          description: formData.description,
-        },
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Assessment request submitted",
-        description: "Our team will contact you within 2 business days.",
-      });
-      setFormData({
-        name: "",
-        organisation: "",
-        role: "",
-        email: "",
-        inventoryValue: "",
-        description: "",
-      });
-    } catch (error: any) {
-      console.error("Form submission error:", error);
-      toast({
-        title: "Submission failed",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -490,102 +430,6 @@ const AssetOwners = () => {
               </Button>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Lead Form */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <SectionHeading
-              title="Request assessment"
-              subtitle="Tell us about your diamond holdings and our team will be in touch."
-            />
-
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              onSubmit={handleSubmit}
-              className="space-y-6 p-8 rounded-2xl bg-gradient-card border border-border/50"
-            >
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-secondary/50"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="organisation">Organisation</Label>
-                  <Input
-                    id="organisation"
-                    value={formData.organisation}
-                    onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                    required
-                    className="bg-secondary/50"
-                  />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="role">Role</Label>
-                  <Input
-                    id="role"
-                    value={formData.role}
-                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    required
-                    className="bg-secondary/50"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="bg-secondary/50"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="inventoryValue">Approximate asset value</Label>
-                <Input
-                  id="inventoryValue"
-                  placeholder="e.g., $5M - $10M"
-                  value={formData.inventoryValue}
-                  onChange={(e) => setFormData({ ...formData, inventoryValue: e.target.value })}
-                  className="bg-secondary/50"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="description">Describe your holdings</Label>
-                <Textarea
-                  id="description"
-                  rows={4}
-                  placeholder="Type of diamonds/gemstones, current storage arrangements, goals for tokenisation..."
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="bg-secondary/50"
-                />
-              </div>
-
-              <Button variant="gold" type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Assessment Request"}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </motion.form>
-          </div>
         </div>
       </section>
 

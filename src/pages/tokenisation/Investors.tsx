@@ -92,12 +92,6 @@ const investmentTypes = [
     description: "Diversified exposure across a managed portfolio of tokenised diamonds.",
     isArva: false
   },
-  {
-    icon: FileStack,
-    title: "Structured products",
-    description: "Diamond-backed notes and structured vehicles for specific risk/return profiles.",
-    isArva: false
-  },
 ];
 
 const journeySteps = [

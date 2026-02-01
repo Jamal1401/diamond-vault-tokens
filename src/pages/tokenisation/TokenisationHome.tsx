@@ -65,7 +65,7 @@ const TokenisationHome = () => {
                 Bringing <span className="text-gradient-gold">Certified Diamonds</span> into the Digital Asset Era
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                <span className="text-foreground font-semibold">Dubai, DMCC</span> based Billiton Diamond, together with the UAE's leading tokenisation partner, has launched Dubai's first VARA‑regulated diamond tokenisation platform—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.
+                <span className="text-foreground font-semibold">Dubai, DMCC</span> based Billiton Diamond presents the UAE's first VARA‑regulated diamond tokenisation platform—transforming certified stones into liquid, 24/7‑tradable digital assets for manufacturers, traders, and institutional investors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <ConsultationDialog>

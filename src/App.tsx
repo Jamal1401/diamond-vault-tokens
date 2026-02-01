@@ -7,6 +7,7 @@ import TokenisationHome from "./pages/tokenisation/TokenisationHome";
 import AssetOwners from "./pages/tokenisation/AssetOwners";
 import Investors from "./pages/tokenisation/Investors";
 import HowItWorks from "./pages/tokenisation/HowItWorks";
+import FAQs from "./pages/tokenisation/FAQs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/tokenisation/asset-owners" element={<AssetOwners />} />
           <Route path="/tokenisation/investors" element={<Investors />} />
           <Route path="/tokenisation/how-it-works" element={<HowItWorks />} />
+          <Route path="/tokenisation/faqs" element={<FAQs />} />
           
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />

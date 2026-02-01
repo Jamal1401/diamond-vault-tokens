@@ -303,7 +303,7 @@ const AssetOwners = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Billiton's platform tokenises <span className="text-foreground font-medium">authenticated, custody-held diamonds and gemstones</span> into <span className="text-foreground font-medium">compliant digital assets</span> that can be bought, sold, and redeemed through a <span className="text-foreground font-medium">regulated marketplace</span>.
+                Billiton's platform tokenises <span className="text-foreground font-medium">certified diamonds and gemstones</span> into <span className="text-foreground font-medium">compliant digital assets</span> that can be bought, sold, and redeemed through a <span className="text-foreground font-medium">regulated marketplace</span>.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed">

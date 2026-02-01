@@ -61,7 +61,7 @@ const TokenisationHome = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left side - Content */}
             <div>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-6">
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium tracking-tight text-foreground leading-[1.15] mb-6">
                 <span className="text-gradient-gold">Tokenising Certified Diamonds</span>{" "}
                 into liquid, 24/7‑tradable assets
               </h1>

@@ -65,7 +65,7 @@ const issuanceSteps = [
   {
     step: 1,
     icon: FileCheck,
-    title: "Asset Submission",
+    title: "Asset Information Submission",
     description: "Submit details of your certified diamonds and gemstones for initial review.",
   },
   {

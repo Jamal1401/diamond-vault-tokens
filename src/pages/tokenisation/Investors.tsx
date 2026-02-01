@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FeatureCard } from "@/components/tokenisation/FeatureCard";
 import { ProcessStep } from "@/components/tokenisation/ProcessStep";
@@ -30,9 +27,6 @@ import {
   LineChart,
   AlertTriangle,
 } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const investorTypes = [
   {
@@ -108,55 +102,6 @@ const risks = [
 
 const Investors = () => {
   useScrollToNextPage();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    email: "",
-    ticketSize: "",
-    investorType: [] as string[],
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const { error } = await supabase.functions.invoke("save-investor-inquiry", {
-        body: {
-          email: formData.email,
-          investorTypes: formData.investorType,
-          ticketSize: formData.ticketSize,
-        },
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Interest registered",
-        description: "Billiton will share offerings after eligibility checks.",
-      });
-      setFormData({ email: "", ticketSize: "", investorType: [] });
-    } catch (error: any) {
-      console.error("Form submission error:", error);
-      toast({
-        title: "Submission failed",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleCheckboxChange = (type: string, checked: boolean) => {
-    setFormData(prev => ({
-      ...prev,
-      investorType: checked 
-        ? [...prev.investorType, type]
-        : prev.investorType.filter(t => t !== type)
-    }));
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -366,72 +311,6 @@ const Investors = () => {
       </section>
 
 
-      {/* Register Interest Form */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="max-w-lg mx-auto">
-            <SectionHeading
-              title="Register your interest"
-              subtitle="Billiton will share offerings after eligibility checks."
-            />
-
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              onSubmit={handleSubmit}
-              className="space-y-6 p-8 rounded-2xl bg-gradient-card border border-border/50"
-            >
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="bg-secondary/50"
-                />
-              </div>
-
-              <div className="space-y-3">
-                <Label>I am a</Label>
-                <div className="space-y-2">
-                  {["Investor", "Platform", "Advisor"].map((type) => (
-                    <div key={type} className="flex items-center space-x-2">
-                      <Checkbox
-                        id={type}
-                        checked={formData.investorType.includes(type)}
-                        onCheckedChange={(checked) => handleCheckboxChange(type, checked as boolean)}
-                      />
-                      <Label htmlFor={type} className="text-muted-foreground font-normal">
-                        {type}
-                      </Label>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="ticketSize">Expected ticket size</Label>
-                <Input
-                  id="ticketSize"
-                  placeholder="e.g., $100K - $500K"
-                  value={formData.ticketSize}
-                  onChange={(e) => setFormData({ ...formData, ticketSize: e.target.value })}
-                  className="bg-secondary/50"
-                />
-              </div>
-
-              <Button variant="gold" type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Register interest"}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </motion.form>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

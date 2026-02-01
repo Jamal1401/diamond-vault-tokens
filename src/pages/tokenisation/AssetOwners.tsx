@@ -65,32 +65,32 @@ const issuanceSteps = [
   {
     step: 1,
     icon: FileCheck,
-    title: "Asset Information Submission",
-    description: "Submit details of your certified diamonds and gemstones for initial review.",
+    title: "Sourcing & Selection",
+    description: "Submit your certified diamond inventory for initial assessment and selection.",
   },
   {
     step: 2,
     icon: Shield,
-    title: "Verification & Certification",
-    description: "We verify provenance, ownership, and validate existing lab certifications.",
+    title: "Certification",
+    description: "We verify provenance, ownership, and validate existing GIA/IGI lab certifications.",
   },
   {
     step: 3,
-    icon: Vault,
-    title: "Vaulting & Custody",
-    description: "Assets are transferred to secure, insured custody with full chain of custody documentation.",
+    icon: Scale,
+    title: "Legal Structure",
+    description: "Establish the compliant legal framework for tokenisation under VARA/DMCC regulations.",
   },
   {
     step: 4,
     icon: Coins,
-    title: "Token Minting",
-    description: "Regulated digital tokens are created representing fractional ownership of the underlying assets.",
+    title: "Token Issuance",
+    description: "Regulated digital tokens (ARVAs) are minted representing the underlying assets.",
   },
   {
     step: 5,
     icon: ListChecks,
-    title: "Listing & Settlement",
-    description: "Tokens are listed on our platform for qualified investors, with seamless settlement.",
+    title: "Marketplace Listing",
+    description: "Tokens are listed for qualified investors, with custody triggered based on your chosen model.",
   },
 ];
 
@@ -347,7 +347,7 @@ const AssetOwners = () => {
         <div className="container">
           <SectionHeading
             title="Issuance process"
-            subtitle="From asset submission to token listing in five steps."
+            subtitle="From sourcing to token listing—aligned with both tokenisation models."
           />
 
           <div className="max-w-4xl mx-auto">

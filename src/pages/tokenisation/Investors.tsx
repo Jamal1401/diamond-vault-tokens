@@ -29,10 +29,6 @@ import {
   Wallet,
   LineChart,
   AlertTriangle,
-  BookOpen,
-  FileQuestion,
-  Scale,
-  Calculator,
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -102,28 +98,6 @@ const journeySteps = [
   { icon: LineChart, title: "Monitor & exit" },
 ];
 
-const resources = [
-  {
-    icon: BookOpen,
-    title: "Guide to diamond tokenisation",
-    href: "#"
-  },
-  {
-    icon: FileQuestion,
-    title: "How redemption works",
-    href: "#"
-  },
-  {
-    icon: Scale,
-    title: "Regulatory considerations",
-    href: "#"
-  },
-  {
-    icon: Calculator,
-    title: "Tax overview",
-    href: "#"
-  },
-];
 
 const risks = [
   "Price volatility – diamond values can fluctuate",
@@ -391,33 +365,6 @@ const Investors = () => {
         </div>
       </section>
 
-      {/* Education Resources */}
-      <section className="py-20 md:py-28 bg-card/50">
-        <div className="container">
-          <SectionHeading
-            title="Education resources"
-          />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {resources.map((resource, i) => (
-              <motion.a
-                key={resource.title}
-                href={resource.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
-                className="group p-6 rounded-xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all flex items-center gap-4"
-              >
-                <resource.icon className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                  {resource.title}
-                </span>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Register Interest Form */}
       <section className="py-20 md:py-28">

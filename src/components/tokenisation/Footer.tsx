@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Diamond, ExternalLink } from "lucide-react";
+import { Diamond, ExternalLink, Linkedin } from "lucide-react";
 
 const footerLinks = {
   tokenisation: [
@@ -11,6 +11,7 @@ const footerLinks = {
   company: [
     { label: "About Billiton", href: "https://billitonauctions.com/about", external: true },
     { label: "Contact", href: "#contact" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/jamal-akhtar-a4bb2a62", external: true, icon: "linkedin" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
@@ -70,8 +71,9 @@ export const Footer = () => {
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
                     >
+                      {link.icon === "linkedin" && <Linkedin className="w-3.5 h-3.5" />}
                       {link.label}
-                      <ExternalLink className="w-3 h-3" />
+                      {!link.icon && <ExternalLink className="w-3 h-3" />}
                     </a>
                   ) : (
                     <Link

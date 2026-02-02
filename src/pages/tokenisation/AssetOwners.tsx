@@ -69,18 +69,12 @@ const issuanceSteps = [
   },
   {
     step: 3,
-    icon: Scale,
-    title: "Legal Structure",
-    description: "Establish the compliant legal framework for tokenisation under VARA/DMCC regulations.",
-  },
-  {
-    step: 4,
     icon: Coins,
     title: "Token Issuance",
     description: "Regulated digital tokens (ARVAs) are minted representing the underlying assets.",
   },
   {
-    step: 5,
+    step: 4,
     icon: ListChecks,
     title: "Marketplace Listing",
     description: "Tokens are listed for qualified investors, with custody triggered based on your chosen model.",

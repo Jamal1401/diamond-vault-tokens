@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/tokenisation/SectionHeading";
 import { FeatureCard } from "@/components/tokenisation/FeatureCard";
 import { Navbar } from "@/components/tokenisation/Navbar";
 import { Footer } from "@/components/tokenisation/Footer";
-import { ConsultationDialog } from "@/components/tokenisation/ConsultationDialog";
+
 import { useScrollToNextPage } from "@/hooks/useScrollToNextPage";
 import {
   ArrowRight,
@@ -167,11 +167,15 @@ const AssetOwners = () => {
                 Request Assessment
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <ConsultationDialog>
+              <a
+                href="https://billitonauctions.com/consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="hero-outline">
                   Schedule Onboarding Call
                 </Button>
-              </ConsultationDialog>
+              </a>
             </div>
           </motion.div>
         </div>

@@ -65,7 +65,7 @@ const TokenisationHome = () => {
                 Bringing <span className="text-gradient-gold">Certified Diamonds</span> into the Digital Asset Era
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
-                <span className="text-foreground font-semibold">Dubai, DMCC</span> based Billiton Diamond, together with the UAE's leading tokenisation partner, are launching Dubai's first diamond tokenisation platform—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.
+                <span className="text-foreground font-semibold">Dubai, DMCC</span> based Billiton Diamond, together with one of UAE's leading tokenisation infrastructure provider, are launching Dubai's first diamond tokenisation platform—unlocking liquidity for manufacturers, traders, and asset owners, introducing an institutional‑grade on‑chain asset class, and positioning the diamond market for a future‑ready digital financial ecosystem.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a

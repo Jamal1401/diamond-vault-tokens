@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { ConsultationDialog } from "./ConsultationDialog";
 
 interface CTABandProps {
   title: string;
@@ -40,12 +39,16 @@ export const CTABand = ({
           </p>
         )}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <ConsultationDialog>
+          <a
+            href="https://billitonauctions.com/consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="gold" size="lg">
               {primaryCTA}
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-          </ConsultationDialog>
+          </a>
           {secondaryCTA && (
             <Button variant="ghost" onClick={onSecondaryCTA} className="text-muted-foreground hover:text-foreground">
               {secondaryCTA}

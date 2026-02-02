@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Diamond, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ConsultationDialog } from "./ConsultationDialog";
+
 
 const navLinks = [
   { href: "/tokenisation", label: "Overview" },
@@ -62,11 +62,15 @@ export const Navbar = () => {
                 Home Page
               </Button>
             </a>
-            <ConsultationDialog>
+            <a
+              href="https://billitonauctions.com/consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="gold" size="sm">
                 Book Consultation
               </Button>
-            </ConsultationDialog>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -117,11 +121,17 @@ export const Navbar = () => {
                     Home Page
                   </Button>
                 </a>
-                <ConsultationDialog>
-                  <Button variant="gold" className="w-full" onClick={() => setIsOpen(false)}>
+                <a
+                  href="https://billitonauctions.com/consultation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Button variant="gold" className="w-full">
                     Book Consultation
                   </Button>
-                </ConsultationDialog>
+                </a>
               </div>
             </div>
           </motion.div>

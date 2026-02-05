@@ -156,21 +156,16 @@ const AssetOwners = () => {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               Tokenising your diamond inventory into compliant, vault-backed digital assets, we unlock liquidity: you can access global buyers, faster settlement, and flexible ownership options while your gems stay securely stored.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://billitonauctions.com/consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="hero">
-                Request Assessment
+                Schedule Onboarding Call
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <a
-                href="https://billitonauctions.com/consultation"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="hero-outline">
-                  Schedule Onboarding Call
-                </Button>
-              </a>
-            </div>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -420,12 +415,18 @@ const AssetOwners = () => {
 
             <div className="mt-8 pt-6 border-t border-border/50">
               <p className="text-sm text-muted-foreground mb-4">
-                Ready to get started? Submit your details below and our team will guide you through the process.
+                Ready to get started? Schedule a call and our team will guide you through the process.
               </p>
-              <Button variant="gold">
-                Request Assessment
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <a
+                href="https://billitonauctions.com/consultation"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="gold">
+                  Schedule Onboarding Call
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>

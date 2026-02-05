@@ -11,6 +11,55 @@ const newsArticles = [
     url: "https://www.coindesk.com/markets/2026/02/03/ripple-backed-custody-secures-usd280-million-diamond-tokenization-push-in-uae",
     description: "Major milestone in diamond tokenization as Ripple-backed custody solution enables significant investment in UAE's growing tokenized asset market.",
   },
+  {
+    title: "Big RWA Move: Billiton and Ctrl Alt Tokenize Over $280 Million Worth Diamonds",
+    source: "CoinGape",
+    date: "February 2026",
+    url: "https://coingape.com/block-of-fame/pulse/big-rwa-move-billiton-and-ctrl-alt-tokenize-over-280-million-worth-diamonds/",
+    description: "Billiton and Ctrl Alt partner to tokenize over $280 million worth of diamonds in a major real-world asset (RWA) initiative.",
+  },
+  {
+    title: "Ripple News Today: Dubai Launches $280M Diamond Tokenization Project on XRPL",
+    source: "TradingView",
+    date: "February 2026",
+    url: "https://www.tradingview.com/news/coinpedia:bb6d7c9ce094b:0-ripple-news-today-dubai-launches-280m-diamond-tokenization-project-on-xrpl/",
+    description: "Dubai launches a $280 million diamond tokenization project utilizing the XRP Ledger infrastructure.",
+  },
+  {
+    title: "Ripple Tokenizes $280 Million in Dubai Diamonds - Here's How It Works",
+    source: "Benzinga",
+    date: "February 2026",
+    url: "https://www.benzinga.com/crypto/cryptocurrency/26/02/50329869/ripple-tokenizes-280-million-in-dubai-diamonds-heres-how-it-works#",
+    description: "An in-depth look at how Ripple's technology enables the tokenization of $280 million worth of diamonds in Dubai.",
+  },
+  {
+    title: "XRP Ledger Gets $280 Million Market of Tokenized Diamonds, Ripple Involved Too",
+    source: "U.Today",
+    date: "February 2026",
+    url: "https://u.today/xrp-ledger-gets-280-million-market-of-tokenized-diamonds-ripple-involved-too",
+    description: "The XRP Ledger expands with a $280 million market of tokenized diamonds with Ripple's involvement.",
+  },
+  {
+    title: "Ctrl Alt and Billiton Diamond Tokenize $280 Million of Diamonds in UAE",
+    source: "Lara on the Block",
+    date: "February 2026",
+    url: "https://laraontheblock.com/ctrl-alt-and-billiton-diamond-tokenize-280-million-of-diamonds-in-uae/",
+    description: "Ctrl Alt and Billiton Diamond collaborate to tokenize $280 million worth of diamonds in the UAE.",
+  },
+  {
+    title: "Ripple Spearheads UAE AED Tokenization",
+    source: "Cryptopolitan",
+    date: "February 2026",
+    url: "https://www.cryptopolitan.com/ripple-spearheads-uae-aed-tokenization/",
+    description: "Ripple leads the charge in UAE's tokenization efforts, pioneering new standards in the digital asset space.",
+  },
+  {
+    title: "Diamond Tokenization News",
+    source: "Bitget",
+    date: "February 2026",
+    url: "https://www.bitget.com/news/detail/12560605180513",
+    description: "Latest updates on diamond tokenization developments in the cryptocurrency space.",
+  },
 ];
 
 const News = () => {

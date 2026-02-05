@@ -134,21 +134,16 @@ const Investors = () => {
                 <span className="text-muted-foreground">Real-World Asset tokens.</span>
               </span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://billitonauctions.com/consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="hero">
-                Register interest
+                Book a call
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <a
-                href="https://billitonauctions.com/consultation"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="hero-outline">
-                  Book a call
-                </Button>
-              </a>
-            </div>
+            </a>
           </motion.div>
         </div>
       </section>

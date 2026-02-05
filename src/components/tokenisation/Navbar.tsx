@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/tokenisation/asset-owners", label: "Asset Owners" },
   { href: "/tokenisation/investors", label: "Investors" },
   { href: "/tokenisation/how-it-works", label: "How It Works" },
+  { href: "/tokenisation/news", label: "News" },
 ];
 
 export const Navbar = () => {
